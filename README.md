@@ -1,2 +1,3 @@
 # joshrosenhanst.com
-Portfolio website
+
+Personal site: [joshrosenhanst.com](https://joshrosenhanst.com)
