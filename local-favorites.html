@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Local Favorites | Josh RosenHanst - Web Developer</title>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
+      <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
+    <header id="site-header">
+    </header>
+    <main id="site-main"><article class="project">
+      <section id="intro" class="site-section">
+        <figure class="project-thumbnail align-right">
+          <img src="./img/local-favorites/local-favorites-main.png" alt="Local Favorites screenshot" />
+        </figure>
+        <h1><span class="header-text">Local Favorites</span></h1>
+        <div class="project-links">
+          <a href="./local-favorites/" class="project-link local-favorites-link">
+            <svg class="button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 556.1 556.7">
+              <path d="M265.3,3.3c9.8-0.8,19.6-0.7,29.4,0c17,1.7,33.9,4.5,50.2,10
+                  c28,9.5,53.1,23.9,74.9,44c28.8,26.5,48.8,58.5,59.7,96.2c6.9,24,8.7,48.5,7.5,73.2c-1.4,28.8-10.5,55.2-24.3,80.3
+                  c-16.3,29.7-35.6,57.4-54.9,85.2c-35.2,50.7-71.1,101-106,151.9c-5.5,8-13.2,12.4-23,12c-9.1-0.4-15.8-5.1-21-12.5
+                  c-22.1-31.9-44.3-63.7-66.5-95.5c-24.2-34.6-48.8-68.8-71.8-104.2c-12.6-19.3-24.6-39-33.6-60.4c-6.3-15-10.4-30.5-12-46.8
+                  c-1.4-13.7-1.9-27.5-0.9-41.2c2.8-36.6,14.1-70.5,34.9-100.9c27.8-40.7,65.3-68.5,112.5-82.9c13.3-4.1,27-6.8,40.9-7.8
+                  C262.7,3.8,264,3.5,265.3,3.3z M193.5,209.4c-0.7,47.6,37.6,88,87.5,87.5c47.5-0.4,85.6-39.4,85.6-86.2c-0.1-49.8-40.4-87-86.5-87
+                  C232.2,123.7,193.3,163.2,193.5,209.4z"/>
+            </svg> 
+            <span class="button_text">View Website</span>
+          </a>
+          <a href="http://github.com" class="project-link github-link" target="_blank" rel="noopener noreferrer">
+            <svg class="button_icon" aria-label="Github Icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+            </svg> 
+            <span class="button_text">Source code</span>
+          </a>
+        </div>
+        <p><a href="./local-favorites/">Local Favorites</a> is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps Javascript API.</p>
+        <p>The app features an interactive map of your local area and a list of nearby points of interest (stores, resutarants, parks, etc).</p>
+      </section>
+      <section id="my-favorites" class="site-section">
+        <figure class="project-thumbnail align-right">
+          <img src="./img/local-favorites/favorites-sidebar-2.png" alt="Local Favorites screenshot" />
+        </figure>
+        <h2><span class="header-text">My Favorites</span></h2>
+        <p>When you select a place from the list or click its icon on the map, you can save it to your favorites and add a review with a star rating and note. The review will be displayed on the map and on the list. If you saved the location as a favorite it will be displayed in the My Favorites tab.</p>
+        <p>When a user saves a favorite place or adds a review, their favorites are saved locally using the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage" target="_blank" rel="noopener noreferrer">LocalStorage</a> so that the data can persist when the user returns to the website.</p>
+      </section>
+      <section id="maps-api" class="site-section">
+        <h2><span class="header-text">Google Maps Javascript API</span></h2>
+        <p>Local Favorites integrates many different services from the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank" rel="noopener noreferrer">Google Maps Javascript API</a> to provide a fuller experience.</p>
+        <p>When the app initializes it prompts the user's browser for their location using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer">Geolocation API</a> via <code>navigator.geolocation</code>. This location is provided to the <a href="https://developers.google.com/maps/documentation/javascript/reference/map" target="_blank" rel="noopener noreferrer">Maps Service</a> to update the bounds of the visible map. The user can also use autocomplete search input, which is added as a map control, to search for a specific place or general area using the <a href="https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service" target="_blank" rel="noopener noreferrer">Places Autocomplete Service</a>.</p>
+        <p>When the bounds of the map have changed, the system will request a new list of nearby places using the <a href="https://developers.google.com/maps/documentation/javascript/reference/places-service" target="_blank" rel="noopener noreferrer">Places Service</a>. These places are displayed in the results list on the Nearby tab. Additionally, the user can click a place icon on the map to select a location.</p>
+      </section>
+      <section id="file-layout" class="site-section">
+        <h2><span class="header-text">Project Components</span></h2>
+        <p>The project is separated into multiple <a href="https://vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener noreferrer">single-file Vue.js components</a> which provide their own internal templates, logic, and styling. The component <code>.vue</code> files are compiled using <a href="https://cli.vuejs.org/guide/" target="_blank" rel="noopener noreferrer">Webpack</a>.</p>
+          
+        <p>The project also utilizes a centralized state management pattern which places app state data management into the <code>AppState.js</code> file, so that the common state data can be accessed by separate components. This pattern made the component interaction easier to maintain overall, but could be replaced with a more standardized implementation like <a href="https://vuex.vuejs.org/" target="_blank" rel="noopener noreferrer">Vuex</a> (see <a href="#future-updates">Future Updates</a> section)</p>
+      </section>
+      <section id="design" class="site-section">
+        <h2><span class="header-text">Design</span></h2>
+        <figure class="project-thumbnail align-center">
+          <img src="./img/local-favorites/full-screenshot-park.jpg" alt="Local Favorites mobile browser screenshot" />
+        </figure>
+        <p>Local Favorites uses a <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer">Flexbox</a> based design that allows the main section (the map and the results list sidebar) to fill the page vertically and horizontally on larger screens. The sidebar uses a maximum width of 400px and the map can fill the rest of the available screen width. The contents of the sidebar scroll instead of flowing beyond the screen height.</p>
+        <figure class="project-thumbnail align-right" style="width: 350px;">
+          <video src="./img/local-favorites/app-animations.mp4" id="animation-video" muted controls autoplay loop width="350">
+            <p>Your browser doesn't support the HTML5 video tag. <a href="./img/local-favorites/app-animations.mp4">Click here to view the video directly</a>.</p>
+          </video>
+          <figcaption>Click the video to pause or resume.</figcaption>
+        </figure>
+        <p>On smaller screens, the app uses a vertical design. The map has its maximum height to set to 250px and it fills the screen horizontally. The results list sidebar is then moved to below the map.</p>
+        <p>Some components make use of the <a href="https://vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener noreferrer">Vue.js animation templates</a> to provide motion to certain controls, as seen in the example screen capture. For example, when a place is selected the button controls slide into the screen. Also, when the active tab is changed the tab's content slides in and the other tab slides out.</p>
+        <p>The app uses some base styles from the <a href="https://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma CSS framework</a>, but only imports the style modules required. This reduces the overall project CSS file size. Additionally <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer"> SVG icons are used to add extra flairs to buttons, links, tabs, etc.</a></p>
+      </section>
+      <section id="accessability" class="site-section">
+        <h2><span class="header-text">Accessability Considerations</span></h2>
+        <p>The website aims to be accessable by keyboard, as well as mouse. The results in the sidebar list have been added to the <code>tabindex</code> so that they can be focused when hitting the <code>Tab</code> key. The results can also be navigated using the <code>Up</code> and <code>Down</code> keys. Once focused, a result can be selected by pressing the <code>Enter</code> or <code>Space</code> keys. The user can then use the <code>Tab</code> key to reach the Save and Review control buttons.</p>
+        <p>The app alsos uses the <code>outline</code> CSS property to add a highlighted look to controls when they are focused. The highlighted focus look improves visibility when using the keyboard to navigate, but doesn't look out of place when using the app with a mouse.</p>
+        <p>One issue that arose while reviewing accessability is that the map doesn't seem to be able to release keyboard focus in Firefox, even if you keep pressing the <code>Tab</code> key. To avoid this issue, the sidebar was placed ahead of the map in the HTML code. The Flexbox CSS was updated to reverse the flow of the design so that the sidebar will still appear after the map. Now in Firefox, the user can tab through the results list and its controls before hitting the map element and losing focus.</p>
+      </section>
+      <section id="pwa" class="site-section">
+        <h2><span class="header-text">Progressive Web App</span></h2>
+        <p>The app was bootstrapped using the <a href="https://cli.vuejs.org/" target="_blank" rel="noopener noreferrer">Vue CLI</a> which provides the configuration necessary for the <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="noopener noreferrer">Progressive Web App</a> standard. By following the PWA standard, the website can be saved to a user's device home screen and act as a native app.</p>
+        <p>The app uses a Javascript Service Worker to facilitate caching the app resources, so the app will load quickly and can be used offline. The app would still need to be online to connect to the Google Maps API, but the saved My Favorites list and reviews could be viewed and updated.</p>
+      </section>  
+      <section id="browser-support" class="site-section">
+        <h2><span class="header-text">Browser Support</span></h2>
+        <p>Due to the use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Browser_compatibility" target="_blank" rel="noopener noreferrer">Flexbox</a> and the <a href="https://github.com/vuejs/vue#browser-compatibility" target="_blank" rel="noopener noreferrer">Vue.js framework</a>, browser support is limited to modern browsers.</p>
+        <p>Support for Internet Explorer 10 and 11 required the use of the <a href="https://babeljs.io/docs/en/babel-polyfill" target="_blank" rel="noopener noreferrer">Babel Polyfill</a> in the Webpack configuration. The polyfill is an additional script that provides supports for newer ECMAScript features in browsers that aren't compatible.</p>
+      </section>
+      <section id="future-updates" class="site-section">
+        <h2><span class="header-text">Future Updates</span></h2>
+        <ul>
+          <li>
+            <p class="no-bottom-spacing"><strong>Smoother Results List Updates</strong>:</p>
+            <p>When the map bounds are changed, the app requests a new list of results from the Google Maps API. When a result is selected, that result is centered on the map and an InfoWindow is displayed on the map. This may cause a positioning issue where the map automatically readjusts the map bounds to fit the InfoWindow, which could result in a new list being requested.</p>
+            <p>This can result in a jumpy experience where the list is refreshed multiple times in a short amount of time. One possible fix would be to check that the bounds haven't changed past a certain distance before requesting a new list.</p></li>
+          <li>
+            <p class="no-bottom-spacing"><strong>Avoid Geolocation Request at Startup</strong>:</p>
+            <p>When the app is initialized, it requests the browser's geolocation, which requires a prompt asking for the user's permission. This experience could be imrpoved by providing the map with a default location and adding a control to the map that requests the browser's geolocation on demand.</p>
+          </li>
+          <li>
+            <p class="no-bottom-spacing"><strong>Better Offline Support</strong>:</p>
+            <p>If the system detects the user is offline or otherwise unable to connect to Google Maps, it should hide or minimize the features taht require API connection and instead show the My Favorites tab, which can be used offline.</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      let videoplayer = document.getElementById("animation-video");
+      videoplayer.controls = false;
+      videoplayer.addEventListener("click", handleVideoClick, false);
+      async function playVideo() {
+        try {
+          await videoplayer.play();
+        } catch(err) {
+          console.log(err);
+        }
+      }
+
+      function handleVideoClick() {
+        console.log("video click");
+        if (videoplayer.paused) {
+          playVideo();
+        } else {
+          videoplayer.pause();
+        }
+      }
+    </script>
+  </body>
+</html>

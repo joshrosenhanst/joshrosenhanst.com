@@ -29,53 +29,83 @@ main#site-main
   p
     line-height: 1.5rem
     margin-bottom: 10px
+    &.no-bottom-spacing
+      margin-bottom: 0
+
+  ol, ul
+    margin-bottom: 10px
+    margin-left: 1em
+
+  ul
+    margin-top: 10px
+    list-style: disc outside
+
+  ol
+    list-style: decimal outside
 
   section.site-section
     margin: 40px 0
-
+    
   article.project
     margin: 40px 0
 
-    .project-thumbnail
-      margin-bottom: 10px
+  .project-thumbnail
+    margin-bottom: 10px
+    figcaption 
+      width: 100%
+      font-size: 12px
+      font-style: italic
+      padding-top: 5px
+      text-align: center
+    img, video
+      display: block
+      border-radius: 8px
+      box-shadow: 0 0 10px rgba(0,0,0,0.15)
+    &.align-right
       +tablet
         max-width: 50%
         float: right
         margin-left: 10px
-      img
-        display: block
-        border-radius: 8px
-        box-shadow: 0 0 10px rgba(0,0,0,0.15)
+    &.align-left
+      +tablet
+        max-width: 50%
+        float: left
+        margin-right: 10px
+    &.align-center
+      max-width: 700px
+      margin: 0 auto 10px auto
+      img, video
+        margin: 0 auto
 
-    .project-links
-      margin-top: 20px
-      .project-link
-        @extend %button
-        font-weight: 500
-        margin-right: 5px
-        margin-bottom: 5px
+  .project-links
+    padding: 10px 0
+    .project-link
+      @extend %button
+      font-weight: 500
+      margin-right: 5px
+      margin-bottom: 5px
+      &:hover, &:focus, &:active
+        text-decoration: none
+      svg.button_icon
+        height: 1em
+        width: 1em
+        fill: currentColor
+        vertical-align: -2px
+      &.github-link
+        background-color: $white
+        color: $github-black
+        border-color: $github-black
         &:hover, &:focus, &:active
-          text-decoration: none
-        svg.button_icon
-          height: 1em
-          width: 1em
-          fill: currentColor
-          vertical-align: -2px
-        &.github-link
-          background-color: $white
-          color: $github-black
-          border-color: $github-black
-          &:hover, &:focus, &:active
-            background-color: $github-black
-            color: $white
-          &:active
-            background-color: lighten($github-black, 10%)
-        &.local-favorites-link
-          background-color: $white
-          color: $local-favorites-blue
-          border-color: $local-favorites-blue
-          &:hover, &:focus, &:active
-            background-color: $local-favorites-blue
-            color: $white
-          &:active
-            background-color: lighten($local-favorites-blue, 10%)
+          background-color: $github-black
+          color: $white
+        &:active
+          background-color: lighten($github-black, 10%)
+      &.local-favorites-link
+        background-color: $white
+        color: $local-favorites-blue
+        border-color: $local-favorites-blue
+        &:hover, &:focus, &:active
+          background-color: $local-favorites-blue
+          color: $white
+        &:active
+          background-color: lighten($local-favorites-blue, 10%)
