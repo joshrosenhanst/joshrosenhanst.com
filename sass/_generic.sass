@@ -53,6 +53,7 @@ a
     color: currentColor
   &:hover
     color: $link-hover
+    text-decoration: underline
 
 code
   background-color: $code-background
@@ -111,3 +112,7 @@ table
     vertical-align: top
   th
     color: $text-strong
+
+::selection
+  background-color: transparentize($link,0.5)
+  color: $white

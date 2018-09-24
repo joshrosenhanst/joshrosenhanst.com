@@ -8,7 +8,11 @@ main#site-main
     font-size: 30px
 
   h1,h2
-    margin-bottom: 10px
+    margin-bottom: 5px
+    .header-text
+      //text-decoration: underline lighten($link,40%)
+      //border-bottom: 2px solid lighten($link,40%)
+      box-shadow: inset 0 -3px 0 transparentize($link,0.8)
 
   h2.with-logo
     margin-bottom: 5px
@@ -50,6 +54,8 @@ main#site-main
         font-weight: 500
         margin-right: 5px
         margin-bottom: 5px
+        &:hover, &:focus, &:active
+          text-decoration: none
         svg.button_icon
           height: 1em
           width: 1em
@@ -59,7 +65,17 @@ main#site-main
           background-color: $white
           color: $github-black
           border-color: $github-black
+          &:hover, &:focus, &:active
+            background-color: $github-black
+            color: $white
+          &:active
+            background-color: lighten($github-black, 10%)
         &.local-favorites-link
-          background: #ffffff
+          background-color: $white
           color: $local-favorites-blue
           border-color: $local-favorites-blue
+          &:hover, &:focus, &:active
+            background-color: $local-favorites-blue
+            color: $white
+          &:active
+            background-color: lighten($local-favorites-blue, 10%)
