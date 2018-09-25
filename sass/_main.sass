@@ -25,6 +25,11 @@ main#site-main
       width: 45px
       padding: 5px
       fill: $local-favorites-blue
+    &.my-watchlist-logo
+      height: 45px
+      width: 45px
+      padding: 5px
+      fill: $my-watchlist-black
 
   p
     line-height: 1.5rem
@@ -109,3 +114,12 @@ main#site-main
           color: $white
         &:active
           background-color: lighten($local-favorites-blue, 10%)
+      &.my-watchlist-link
+        background-color: $white
+        color: $my-watchlist-black
+        border-color: $my-watchlist-black
+        &:hover, &:focus, &:active
+          background-color: $my-watchlist-black
+          color: $white
+        &:active
+          background-color: lighten($my-watchlist-black, 10%)
