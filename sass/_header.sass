@@ -3,6 +3,13 @@
   background-image: linear-gradient(135deg,$body-background-color,$header-background-color,$header-background-color,$body-background-color)
   border-bottom: 1px solid transparentize($link,0.8)
 
+%dropdown-open
+  opacity: 1
+  display: block
+  pointer-events: auto
+  transform: translateY(-8px)
+
+
 =arrow($color: $link)
   border: 3px solid $color
   border-radius: 2px
@@ -60,11 +67,20 @@ nav#header-navbar
     &.dropdown
       padding: 0
       position: relative
+      &:hover, &:focus-within
+        .navbar-dropdown-box
+          @extend %dropdown-open
+
       .navbar-dropdown-text
         padding: 0.5rem 2.2em 0.5rem 0.75rem
         position: relative
         &::after
           +arrow
+        
+        &:hover, &:focus, &:focus-within
+          color: $link
+          &+.navbar-dropdown-box
+            @extend %dropdown-open
       
       .navbar-dropdown-box
         padding: 0.25em 0
@@ -83,6 +99,7 @@ nav#header-navbar
         background: $white
         border-radius: 6px
         box-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
+
         .navbar-item
           font-size: 22px
           margin: 5px 0
@@ -106,19 +123,6 @@ nav#header-navbar
                 padding: 2px
           &:hover, &:focus
             background-color: $grey-lightest
-
-    &.is-open, &:hover
-      /*.navbar-dropdown-text::after
-        transform: rotate(135deg)
-        top: calc(50% - 3px)*/
-      .navbar-dropdown-text
-        color: $link
-
-      .navbar-dropdown-box
-        opacity: 1
-        display: block
-        pointer-events: auto
-        transform: translateY(-8px)
 
   a.navbar-item, a.navbar-dropdown-text
     color: $body-color
