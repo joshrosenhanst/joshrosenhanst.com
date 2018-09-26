@@ -15,7 +15,7 @@
           <a href="https://joshrosenhanst.com" class="navbar-item" title="Return to the Home Page">Josh RosenHanst</a>
         </div>
         <div class="navbar-right">
-          <div class="navbar-item dropdown is-open">
+          <div class="navbar-item dropdown">
             <a class="navbar-dropdown-text" tabindex="0">
               Projects
             </a>
@@ -157,25 +157,27 @@
     </main>
 
     <script>
-      let videoplayer = document.getElementById("animation-video");
-      videoplayer.controls = false;
-      videoplayer.addEventListener("click", handleVideoClick, false);
-      async function playVideo() {
-        try {
-          await videoplayer.play();
-        } catch(err) {
-          console.log(err);
-        }
-      }
+      document.addEventListener('DOMContentLoaded', () => {
+        let videoplayer = document.getElementById("animation-video");
+        videoplayer.controls = false;
+        videoplayer.addEventListener("click", handleVideoClick, false);
 
-      function handleVideoClick() {
-        console.log("video click");
-        if (videoplayer.paused) {
-          playVideo();
-        } else {
-          videoplayer.pause();
+        async function playVideo() {
+          try {
+            await videoplayer.play();
+          } catch(err) {
+            console.log(err);
+          }
         }
-      }
+
+        function handleVideoClick() {
+          if (videoplayer.paused) {
+            playVideo();
+          } else {
+            videoplayer.pause();
+          }
+        }
+      });
     </script>
   </body>
 </html>

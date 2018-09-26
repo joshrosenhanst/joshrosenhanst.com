@@ -67,7 +67,7 @@ nav#header-navbar
           +arrow
       
       .navbar-dropdown-box
-        padding: 0.5em 0
+        padding: 0.25em 0
         font-size: 0.875em
         z-index: 20
         position: absolute
@@ -107,7 +107,7 @@ nav#header-navbar
           &:hover, &:focus
             background-color: $grey-lightest
 
-    &.is-open
+    &.is-open, &:hover
       /*.navbar-dropdown-text::after
         transform: rotate(135deg)
         top: calc(50% - 3px)*/
@@ -118,7 +118,7 @@ nav#header-navbar
         opacity: 1
         display: block
         pointer-events: auto
-        transform: translateY(-1px)
+        transform: translateY(-8px)
 
   a.navbar-item, a.navbar-dropdown-text
     color: $body-color
