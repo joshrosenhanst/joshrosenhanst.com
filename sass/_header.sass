@@ -104,8 +104,8 @@ nav#header-navbar
               color: $my-watchlist-purple
               svg
                 padding: 2px
-          &:hover
-            background-color: $white-bis
+          &:hover, &:focus
+            background-color: $grey-lightest
 
     &.is-open
       /*.navbar-dropdown-text::after
@@ -122,6 +122,6 @@ nav#header-navbar
 
   a.navbar-item, a.navbar-dropdown-text
     color: $body-color
-    &:hover
+    &:hover, &:focus
       text-decoration: none
       color: $link
