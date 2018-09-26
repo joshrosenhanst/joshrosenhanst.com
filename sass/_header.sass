@@ -1,7 +1,24 @@
-header#site-header
+%header-background
   background-color: $header-background-color
   background-image: linear-gradient(135deg,$body-background-color,$header-background-color,$header-background-color,$body-background-color)
   border-bottom: 1px solid transparentize($link,0.8)
+
+=arrow($color: $link)
+  border: 3px solid $color
+  border-radius: 2px
+  border-right: 0
+  border-top: 0
+  content: " "
+  display: inline-block
+  height: 0.625em
+  width: 0.625em
+  transform: rotate(-45deg)
+  position: absolute
+  right: 1.125em
+  top: calc(50% - 7px)
+
+header#site-header
+  @extend %header-background
   text-align: center
   padding: 80px 15px
   margin: 0 auto
@@ -12,3 +29,98 @@ header#site-header
   
   h2
     font-size: 1.5rem
+
+header#site-nav
+  @extend %header-background
+  
+nav#header-navbar
+  @extend %container
+  padding: 0 1.5rem
+  align-items: stretch
+  display: flex
+  flex-shrink: 0
+  font-family: $header-family
+  font-weight: $header-weight
+  font-size: 22px
+
+  .navbar-left
+    justify-content: flex-start
+    margin-right: auto
+  .navbar-right
+    justify-content: flex-end
+    margin-left: auto
+
+  .navbar-item
+    display: flex
+    flex-grow: 0
+    flex-shrink: 0
+    padding: 0.5rem 0.75rem
+    position: relative
+
+    &.dropdown
+      padding: 0
+      position: relative
+      .navbar-dropdown-text
+        padding: 0.5rem 2.2em 0.5rem 0.75rem
+        position: relative
+        &::after
+          +arrow
+      
+      .navbar-dropdown-box
+        padding: 0.5em 0
+        font-size: 0.875em
+        z-index: 20
+        position: absolute
+        right: 0
+        top: 100%
+        min-width: 100%
+        display: none
+        opacity: 0
+        pointer-events: none
+        transform: translateY(-5px)
+        transition-duration: 500ms
+        transition-property: opacity, transform
+        background: $white
+        border-radius: 6px
+        box-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
+        .navbar-item
+          font-size: 22px
+          margin: 2px 0
+          padding: 2px 2em 2px 1em
+          white-space: nowrap
+          .navbar-icon
+            height: 25px
+            width: 25px
+            margin-right: 5px
+            //border: 1px solid $link
+            svg
+              height: 100%
+              width: 100%
+              fill: currentColor
+            &.local-favorites-icon
+              color: $local-favorites-blue
+            &.my-watchlist-icon
+              color: $my-watchlist-purple
+              svg
+                padding: 2px
+          &:hover
+            background-color: $white-bis
+
+    &.is-open
+      /*.navbar-dropdown-text::after
+        transform: rotate(135deg)
+        top: calc(50% - 3px)*/
+      .navbar-dropdown-text
+        color: $link
+
+      .navbar-dropdown-box
+        opacity: 1
+        display: block
+        pointer-events: auto
+        transform: translateY(-1px)
+
+  a.navbar-item, a.navbar-dropdown-text
+    color: $body-color
+    &:hover
+      text-decoration: none
+      color: $link
