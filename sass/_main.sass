@@ -122,6 +122,9 @@ main#site-main
         //width: 1em
         fill: currentColor
         vertical-align: -2px
+      img.button_icon
+        height: 1em
+        vertical-align: -2px
       &.github-link
         background-color: $white
         color: $github-black
@@ -132,20 +135,9 @@ main#site-main
         &:active
           background-color: lighten($github-black, 10%)
       &.local-favorites-link
-        background-color: $white
-        color: $local-favorites-blue
-        border-color: $local-favorites-blue
-        &:hover, &:focus, &:active
-          background-color: $local-favorites-blue
-          color: $white
-        &:active
-          background-color: lighten($local-favorites-blue, 10%)
+        +logo-link($local-favorites-blue)
       &.my-watchlist-link
-        background-color: $white
-        color: $my-watchlist-purple
-        border-color: $my-watchlist-purple
-        &:hover, &:focus, &:active
-          background-color: $my-watchlist-purple
-          color: $white
-        &:active
-          background-color: lighten($my-watchlist-purple, 10%)
+        +logo-link($my-watchlist-purple)
+      &.litbit-link
+        +logo-link($litbit-brown)
+

@@ -135,6 +135,19 @@ $button-hover-border-color: $text-strong
 =overflow-touch
   -webkit-overflow-scrolling: touch
 
+// logo icon button mixin
+=logo-link($primary-color, $background: $white,$hover: lighten($primary-color, 10%))
+  background-color: $background
+  color: $primary-color
+  border-color: $primary-color
+  &:hover, &:focus, &:active
+    background-color: $primary-color
+    color: $background
+    .svg_inner_highlight
+      fill: $background !important
+  &:active
+    background-color: $hover
+
 // SASS Shared properties (shared via @extend %name)
 %unselectable
   -webkit-touch-callout: none
