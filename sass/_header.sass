@@ -111,23 +111,36 @@ nav#header-navbar
 
         .navbar-item
           font-size: 22px
-          margin: 5px 0
-          padding: 3px 2em 3px 1em
+          //margin: 5px 0
+          padding: 6px 2em 6px 0.5em
           white-space: nowrap
+          border-top: 1px solid $grey-lightest
+          &:last-of-type
+            border-bottom: 1px solid $grey-lightest
           .navbar-icon
             height: 25px
             width: 25px
+            margin-right: 3px
             //margin-right: 5px
             //border: 1px solid $link
             svg
               height: 100%
-              //width: 100%
+              width: 100%
               fill: currentColor
               vertical-align: 2px
             &.local-favorites-icon
               color: $local-favorites-blue
             &.my-watchlist-icon
               color: $my-watchlist-purple
+              svg
+                padding: 1px
+            &.litbit-icon
+              svg
+                //padding-right: 4px
+            &.twitchrandom-icon
+              color: $twitchrandom-purple
+            &.dota2layout-icon
+              color: $dota2layout-orange
               svg
                 padding: 2px
           &:hover, &:focus
