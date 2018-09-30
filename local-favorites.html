@@ -247,8 +247,8 @@
             <span class="button_text">Source code</span>
           </a>
         </div>
-        <p><a href="./local-favorites/">Local Favorites</a> is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps Javascript API.</p>
-        <p>The app features an interactive map of your local area and a list of nearby points of interest (stores, resutarants, parks, etc).</p>
+        <p><a href="./local-favorites/">Local Favorites</a> is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps JavaScript API.</p>
+        <p>The app features an interactive map of your local area and a list of nearby points of interest (stores, restaurants, parks, etc).</p>
       </section>
       <section id="my-favorites" class="site-section">
         <figure class="project-thumbnail align-right">
@@ -259,8 +259,8 @@
         <p>When a user saves a favorite place or adds a review, their favorites are saved locally using the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage" target="_blank" rel="noopener noreferrer">LocalStorage</a> so that the data can persist when the user returns to the website.</p>
       </section>
       <section id="maps-api" class="site-section">
-        <h2><span class="header-text">Google Maps Javascript API</span></h2>
-        <p>Local Favorites integrates many different services from the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank" rel="noopener noreferrer">Google Maps Javascript API</a> to provide a fuller experience. The <a href="https://github.com/xkjyeah/vue-google-maps" target="_blank" rel="noopener noreferrer">vue-google-maps</a> component provides default implementation of some of the API services and the app builds upon that implementation for the functionality of the website.</p>
+        <h2><span class="header-text">Google Maps JavaScript API</span></h2>
+        <p>Local Favorites integrates many different services from the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank" rel="noopener noreferrer">Google Maps JavaScript API</a> to provide a fuller experience. The <a href="https://github.com/xkjyeah/vue-google-maps" target="_blank" rel="noopener noreferrer">vue-google-maps</a> component provides default implementation of some of the API services and the app builds upon that implementation for the functionality of the website.</p>
         <p>When the app initializes it prompts the user's browser for their location using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer">Geolocation API</a> via <code>navigator.geolocation</code>. This location is provided to the <a href="https://developers.google.com/maps/documentation/javascript/reference/map" target="_blank" rel="noopener noreferrer">Maps Service</a> to update the bounds of the visible map. The user can also use autocomplete search input, which is added as a map control, to search for a specific place or general area using the <a href="https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service" target="_blank" rel="noopener noreferrer">Places Autocomplete Service</a>.</p>
         <p>When the bounds of the map have changed, the system will request a new list of nearby places using the <a href="https://developers.google.com/maps/documentation/javascript/reference/places-service" target="_blank" rel="noopener noreferrer">Places Service</a>. These places are displayed in the results list on the Nearby tab. Additionally, the user can click a place icon on the map to select a location.</p>
       </section>
@@ -287,15 +287,15 @@
         <p>The app uses some base styles from the <a href="https://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma CSS framework</a>, but only imports the style modules required. This reduces the overall project CSS file size. Additionally <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">SVG icons</a> are used to add extra flairs to buttons, links, tabs, etc.</p>
       </section>
       <section id="accessability" class="site-section">
-        <h2><span class="header-text">Accessability Considerations</span></h2>
-        <p>The website aims to be accessable by keyboard, as well as mouse. The results in the sidebar list have been added to the <code>tabindex</code> so that they can be focused when hitting the <code>Tab</code> key. The results can also be navigated using the <code>Up</code> and <code>Down</code> keys. Once focused, a result can be selected by pressing the <code>Enter</code> or <code>Space</code> keys. The user can then use the <code>Tab</code> key to reach the Save and Review control buttons.</p>
-        <p>The app alsos uses the <code>outline</code> CSS property to add a highlighted look to controls when they are focused. The highlighted focus look improves visibility when using the keyboard to navigate, but doesn't look out of place when using the app with a mouse.</p>
-        <p>One issue that arose while reviewing accessability is that the map doesn't seem to be able to release keyboard focus in Firefox, even if you keep pressing the <code>Tab</code> key. To avoid this issue, the sidebar was placed ahead of the map in the HTML code. The Flexbox CSS was updated to reverse the flow of the design so that the sidebar will still appear after the map. Now in Firefox, the user can tab through the results list and its controls before hitting the map element and losing focus.</p>
+        <h2><span class="header-text">Accessibility Considerations</span></h2>
+        <p>The website aims to be accessible by keyboard, as well as mouse. The results in the sidebar list have been added to the <code>tabindex</code> so that they can be focused when hitting the <code>Tab</code> key. The results can also be navigated using the <code>Up</code> and <code>Down</code> keys. Once focused, a result can be selected by pressing the <code>Enter</code> or <code>Space</code> keys. The user can then use the <code>Tab</code> key to reach the Save and Review control buttons.</p>
+        <p>The app also uses the <code>outline</code> CSS property to add a highlighted look to controls when they are focused. The highlighted focus look improves visibility when using the keyboard to navigate, but doesn't look out of place when using the app with a mouse.</p>
+        <p>One issue that arose while reviewing accessibility is that the map doesn't seem to be able to release keyboard focus in Firefox, even if you keep pressing the <code>Tab</code> key. To avoid this issue, the sidebar was placed ahead of the map in the HTML code. The Flexbox CSS was updated to reverse the flow of the design so that the sidebar will still appear after the map. Now in Firefox, the user can tab through the results list and its controls before hitting the map element and losing focus.</p>
       </section>
       <section id="pwa" class="site-section">
         <h2><span class="header-text">Progressive Web App</span></h2>
         <p>The app was bootstrapped using the <a href="https://cli.vuejs.org/" target="_blank" rel="noopener noreferrer">Vue CLI</a> which provides the configuration necessary for the <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="noopener noreferrer">Progressive Web App</a> standard. By following the PWA standard, the website can be saved to a user's device home screen and act as a native app.</p>
-        <p>The app uses a Javascript Service Worker to facilitate caching the app resources, so the app will load quickly and can be used offline. The app would still need to be online to connect to the Google Maps API, but the saved My Favorites list and reviews could be viewed and updated.</p>
+        <p>The app uses a JavaScript Service Worker to facilitate caching the app resources, so the app will load quickly and can be used offline. The app would still need to be online to connect to the Google Maps API, but the saved My Favorites list and reviews could be viewed and updated.</p>
       </section>  
       <section id="browser-support" class="site-section">
         <h2><span class="header-text">Browser Support</span></h2>
@@ -311,11 +311,11 @@
             <p>This can result in a jumpy experience where the list is refreshed multiple times in a short amount of time. One possible fix would be to check that the bounds haven't changed past a certain distance before requesting a new list.</p></li>
           <li>
             <p class="no-bottom-spacing"><strong>Avoid Geolocation Request at Startup</strong>:</p>
-            <p>When the app is initialized, it requests the browser's geolocation, which requires a prompt asking for the user's permission. This experience could be imrpoved by providing the map with a default location and adding a control to the map that requests the browser's geolocation on demand.</p>
+            <p>When the app is initialized, it requests the browser's geolocation, which requires a prompt asking for the user's permission. This experience could be improved by providing the map with a default location and adding a control to the map that requests the browser's geolocation on demand.</p>
           </li>
           <li>
             <p class="no-bottom-spacing"><strong>Better Offline Support</strong>:</p>
-            <p>If the system detects the user is offline or otherwise unable to connect to Google Maps, it should hide or minimize the features taht require API connection and instead show the My Favorites tab, which can be used offline.</p>
+            <p>If the system detects the user is offline or otherwise unable to connect to Google Maps, it should hide or minimize the features that require API connection and instead show the My Favorites tab, which can be used offline.</p>
           </li>
         </ul>
       </section>
