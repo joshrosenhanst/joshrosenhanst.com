@@ -313,7 +313,7 @@
         </figure>
         <h2><span class="header-text">Book Processing</span></h2>
         <p>Each book used on the website is processed using a Python script which reads the plain text file line by line and groups them by the number of syllables.</p>
-        <p>The number of syllables are estimated using the <a href="https://github.com/akkana/scripts/blob/master/countsyl" target="_blank" rel="noopener noreferrer">countsyl.py</a> script which uses a few simple rules to determine the number of syllables. The syllable count isn't perfectly accurate, but works as a way of comparing similarly sized lines. The lines are also sanitized to remove extra whitespaces and quotation or other marks that don't have a matching symbol (for example, when a quotation starts on line and ends on another).</p>
+        <p>The number of syllables are estimated using the <a href="https://github.com/akkana/scripts/blob/master/countsyl" target="_blank" rel="noopener noreferrer">countsyl.py</a> script which uses a few simple rules to determine the number of syllables. The syllable count isn't perfectly accurate, but works as a way of comparing similarly sized lines. The lines are also sanitized to remove extra whitespaces and quotation or other marks that don't have a matching symbol (for example, when a quotation starts on one line and ends on another).</p>
         <p>The list of lines grouped by syllable count is saved in <code>.json</code> format and the <code>books.json</code> file is updated with each processed book's author, title, and image.</p>
       </section>
       <section id="poem-creation" class="site-section">
