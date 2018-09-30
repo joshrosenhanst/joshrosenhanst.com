@@ -224,7 +224,7 @@
     <main id="site-main"><article class="project">
       <section id="intro" class="site-section">
         <figure class="project-thumbnail align-right">
-          <img src="./img/twitchrandom/twitchrandom-front.jpg" alt="My Watchlist screenshot" />
+          <img src="./img/twitchrandom/twitchrandom-main.jpg" alt="My Watchlist screenshot" />
         </figure>
         <h1><span class="header-text">TwitchRandom</span></h1>
         <div class="project-links">
@@ -259,8 +259,9 @@
             <span class="button_text">Source code</span>
           </a>
         </div>
-        <p><a href="https://twitchrandom.com">TwitchRandom</a> is a project that finds random <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer">video games streams</a> to watch, using the <a href="https://dev.twitch.tv/docs/v5/" target="_blank" rel="noopener noreferrer"> Twitch.tv API</a>.</p>
-        <p>Because the streams are completely random, you can find new games and broadcasters that aren't as well known</p>
+        <p><a href="https://twitchrandom.com">TwitchRandom</a> is a project that finds random <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer">video game streams</a> to watch, using the <a href="https://dev.twitch.tv/docs/v5/" target="_blank" rel="noopener noreferrer"> Twitch.tv API</a>.</p>
+        <p>Because the streams are completely random, you can find new games and broadcasters that aren't as well known.</p>
+        <p>The site can also filter the random streams by game.</p>
       </section>
       <section id="twitch-api" class="site-section">
         <h2><span class="header-text">Twitch.tv API</span></h2>
@@ -270,38 +271,38 @@
         <p>In addition to the random stream functionality, the site also grabs a list of the most popular games using the <a href="https://dev.twitch.tv/docs/v5/reference/games/#get-top-games" target="_blank" rel="noopener noreferrer">Get Top Games API endpoint</a>. The top games are used to populate the list of games in the header navigation menu as well as the <a href="https://twitchrandom.com/games" target="_blank" rel="noopener noreferrer">All Games page</a>.</p>
       </section>
       <section id="featured-content" class="site-section">
-        <figure class="project-thumbnail align-center">
-          <img src="./img/my-watchlist/mobile-screenshot.png" alt="My Watchlist mobile design screenshot" />
-        </figure>
         <h2><span class="header-text">Featured Content</span></h2>
+        <figure class="project-thumbnail align-center">
+          <img src="./img/twitchrandom/featured-streams.jpg" alt="Featured Streams screenshot" />
+        </figure>
         <p>Although it can be interesting to find hidden gems using the random stream functionality, users can also find the top featured Twitch streams in the Featured Streams section. This section is visually emphasized and also ends with a response Google Adsense ad that fits comfortably into the layout.</p>
       </section>
       <section id="Slogans" class="site-section">
         <h2><span class="header-text">Slogans</span></h2>
-        <figure class="project-thumbnail align-left">
-          <img src="./img/my-watchlist/mobile-screenshot.png" alt="My Watchlist mobile design screenshot" />
-        </figure>
         <p>In the header of the website, the site displays a random slogan when the page is loaded. These slogans are taken from popular Twitch and video game culture.</p>
       </section>
       <section id="thumbnail-galleries" class="site-section">
         <h2><span class="header-text">Thumbnail Galleries</span></h2>
-        <p>Below the Featured Streams section, the site loads two scrollable galleries with thumbnail links to other streams.</p>
         <figure class="project-thumbnail align-center">
-          <img src="./img/my-watchlist/mobile-screenshot.png" alt="My Watchlist mobile design screenshot" />
+          <img src="./img/twitchrandom/galleries-screenshot.jpg" alt="Gallery screenshot" />
         </figure>
-        <p>The first gallery includes randomly selected channels and the second gallery includes channels that are playing the same game as the embedded stream at the top of the page.</p>
+        <p>Below the Featured Streams section, the site loads two scrollable galleries with thumbnail links to other streams.</p>
+        <p>The first gallery includes randomly selected channels and the second gallery includes channels that are playing the same game as the embedded stream at the top of the page. The galleries can be loaded with new random stream links by pressing the Randomize Gallery buttons.</p>
+      </section>
+      <section id="design" class="site-section">
+        <figure class="project-thumbnail align-right">
+          <img src="./img/twitchrandom/mobile-screenshot.jpg" alt="TwitchRandom mobile design screenshot" />
+        </figure>
+        <h2><span class="header-text">Design</span></h2>
+        <p>TwitchRandom uses a responsive design built with the <a href="http://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap CSS framework</a>. The site's layoutis designed to look clean on both mobile and desktop browsers. The site uses a color scheme of purple and white similar to Twitch.tv.</p>
       </section>
       <section id="ajax" class="site-section">
         <h2><span class="header-text">AJAX Usage</span></h2>
         <p>In order to keep the user interface feeling fluid and responsive, many sections of the site make use of asynchronous AJAX calls which do not require reloading the entire page.</p>
         <p>For example, the Random Stream button next to the embedded video will replace the current stream with a new, random stream. When the button is pressed, a new stream is requested via AJAX and a new random slogan is placed in the website branding.</p>
         <p>Additionally, the site's URL is updated to the new stream's unique URL. Finally, using the <a href="https://github.com/browserstate/history.js/" target="_blank" rel="noopener noreferrer">History.js</a> library, the site creates a new entry in the browser's history record, emulating the act of changing pages. These two actions make it so that the random streams are accessable later if the user hits the back button or enters the stream URL.</p>
-        <p>The galleries are also requested via AJAX and can be reloded with the Random Gallery buttons.</p>
+        <p>The galleries are also requested via AJAX and can be reloaded with the Randomize Gallery buttons.</p>
       </section>  
-      <section id="design" class="site-section">
-        <h2><span class="header-text">Design</span></h2>
-        <p>TwitchRandom uses a responsive design built on the <a href="http://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap CSS framework</a>. The site's layoutis designed to look clean on both mobile and desktop browsers. The site uses a color scheme of purple and white similar to Twitch.tv.</p>
-      </section>
       <section id="browser-support" class="site-section">
         <h2><span class="header-text">Browser Support</span></h2>
         <p>The website uses jQuery for much of its front-end functionality and is compatibible with all modern browsers as well as older Internet Explorere versions. Unfortunately, the Twitch.tv embedded player only <a href="https://help.twitch.tv/customer/portal/articles/2489984-supported-browser-versions" target="_blank" rel="noopener noreferrer">supports Internet Explorer 11</a>.</p>
