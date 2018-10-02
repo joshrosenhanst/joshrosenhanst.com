@@ -145,3 +145,16 @@ main#site-main
         +logo-link($twitchrandom-purple)
       &.dota2layout-link
         +logo-link($dota2layout-orange)
+    
+    &.main-project-links
+      .project-link
+        font-family: $header-family
+        color: $link
+        border: 1px solid transparentize($link,0.8)
+        font-size: 1.2rem
+        &:hover, &:focus
+          color: $white
+          background-color: $link
+        &:active
+          lighten($link, 10%)
+          color: $white

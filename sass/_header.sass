@@ -152,3 +152,18 @@ nav#header-navbar
     &:hover, &:focus
       text-decoration: none
       color: $link
+
+.header-links
+  .header-link
+    @extend %button
+    margin: 10px 5px
+    font-size: 1.1rem
+    font-family: $header-family
+    font-weight: 500
+    border-color: $grey-light
+    background-color: $grey-lightest
+    min-width: 110px
+    &:hover, &:focus
+      text-decoration: none
+      border-color: $body-color
+      background-color: $white
