@@ -74,23 +74,6 @@ nav#header-navbar
     &.dropdown
       padding: 0
       position: relative
-      &:hover, &:focus-within
-        .navbar-dropdown-text
-          color: $link
-        .navbar-dropdown-box
-          @extend %dropdown-open
-
-      .navbar-dropdown-text
-        padding: 0.5rem 1.25em 0.5rem 0.75rem
-        position: relative
-        &::after
-          +arrow
-        
-        &:hover, &:focus, &:focus-within
-          color: $link
-          &+.navbar-dropdown-box
-            @extend %dropdown-open
-      
       .navbar-dropdown-box
         padding: 0.25em 0
         font-size: 0.875em
@@ -124,8 +107,8 @@ nav#header-navbar
             //margin-right: 5px
             //border: 1px solid $link
             svg
-              height: 100%
-              width: 100%
+              height: 25px
+              width: 25px
               fill: currentColor
               vertical-align: 2px
             &.local-favorites-icon
@@ -145,6 +128,24 @@ nav#header-navbar
                 padding: 2px
           &:hover, &:focus
             background-color: $grey-lightest
+
+    &.dropdown:hover, &.dropdown:focus-within
+      .navbar-dropdown-text
+        color: $link
+      .navbar-dropdown-box
+        @extend %dropdown-open
+
+    &.dropdown .navbar-dropdown-text
+      padding: 0.5rem 1.25em 0.5rem 0.75rem
+      position: relative
+      &::after
+        +arrow
+      
+      &:hover, &:focus, &:focus-within
+        color: $link
+        &+.navbar-dropdown-box
+          @extend %dropdown-open
+      
 
   a.navbar-item, a.navbar-dropdown-text
     color: $body-color
