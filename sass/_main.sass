@@ -39,6 +39,8 @@ main#site-main
       fill: $twitchrandom-purple
     &.dota2layout-logo
       fill: $dota2layout-orange
+    &.groupcalendar-logo
+      fill: $groupcalendar-red
 
   p
     line-height: 1.5rem
@@ -145,6 +147,14 @@ main#site-main
         +logo-link($twitchrandom-purple)
       &.dota2layout-link
         +logo-link($dota2layout-orange)
+      &.groupcalendar-link
+        +logo-link($groupcalendar-turquoise)
+        svg
+          fill: $groupcalendar-red
+          height: 24px
+          width: 24px
+          margin-bottom: -2px
+
     
     &.main-project-links
       .project-link
@@ -156,5 +166,5 @@ main#site-main
           color: $white
           background-color: $link
         &:active
-          lighten($link, 10%)
+          background-color: lighten($link, 10%)
           color: $white

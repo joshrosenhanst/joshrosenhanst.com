@@ -1,0 +1,23 @@
+{
+  "name": "joshrosenhanst.com",
+  "version": "1.0.0",
+  "description": "Personal site: [joshrosenhanst.com](https://joshrosenhanst.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass sass/index.sass css/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshrosenhanst/joshrosenhanst.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshrosenhanst/joshrosenhanst.com/issues"
+  },
+  "homepage": "https://github.com/joshrosenhanst/joshrosenhanst.com#readme",
+  "dependencies": {
+    "sass": "^1.17.3"
+  }
+}
