@@ -49,10 +49,14 @@ nav#header-navbar
   padding: 0 1.5rem
   align-items: stretch
   display: flex
+  justify-content: space-between
   flex-shrink: 0
   font-family: $header-family
   font-weight: $header-weight
   font-size: 22px
+
+  .navbar-section
+    @extend %navbar-items-container
 
   .navbar-left
     @extend %navbar-items-container
@@ -74,7 +78,7 @@ nav#header-navbar
     &.dropdown
       padding: 0
       position: relative
-      .navbar-dropdown-box
+      .dropdown-contents
         padding: 0.25em 0
         font-size: 0.875em
         z-index: 20
@@ -92,7 +96,7 @@ nav#header-navbar
         border-radius: 6px
         box-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
 
-        .navbar-item
+        .dropdown-item
           font-size: 22px
           //margin: 5px 0
           padding: 6px 2em 6px 0.5em
@@ -133,12 +137,12 @@ nav#header-navbar
             background-color: $grey-lightest
 
     &.dropdown:hover, &.dropdown:focus-within
-      .navbar-dropdown-text
+      .dropdown-text
         color: $link
-      .navbar-dropdown-box
+      .dropdown-contents
         @extend %dropdown-open
 
-    &.dropdown .navbar-dropdown-text
+    &.dropdown .dropdown-text
       padding: 0.5rem 1.25em 0.5rem 0.75rem
       position: relative
       &::after
@@ -146,11 +150,11 @@ nav#header-navbar
       
       &:hover, &:focus, &:focus-within
         color: $link
-        &+.navbar-dropdown-box
+        &+.dropdown-contents
           @extend %dropdown-open
       
 
-  a.navbar-item, a.navbar-dropdown-text
+  a.navbar-item, a.dropdown-text
     color: $body-color
     &:hover, &:focus
       text-decoration: none

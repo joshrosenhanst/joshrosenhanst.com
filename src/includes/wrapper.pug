@@ -1,0 +1,34 @@
+include icons.pug
+
+block variables
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald",rel="stylesheet")
+    link(href="./css/index.css" rel="stylesheet")
+    title= title
+    meta(name="author" content="Josh RosenHanst")
+    meta(name="description" content=description)
+
+    //- facebook meta block
+    meta(property="og:title" content=title)
+    meta(property="og:type" content="website")
+    meta(property="og:url" content=url)
+    meta(property="og:image" content=banner.src)
+    meta(property="og:image:type" content=banner.type)
+    meta(property="og:image:width" content=banner.width)
+    meta(property="og:image:height" content=banner.height)
+    meta(property="og:image:alt" content=banner.alt)
+
+    //- twitter meta block
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content="@joshrosenhanst")
+  body
+    a.content-skip(href="#site-main") Skip to main content
+    block header
+    main#site-main
+      block content
+

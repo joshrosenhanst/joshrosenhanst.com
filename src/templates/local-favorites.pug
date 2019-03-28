@@ -1,0 +1,20 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "Local Favorites | Josh RosenHanst - Web Development and Design"
+  - var description = "Local Favorites is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps JavaScript API."
+  - var url = "https://joshrosenhanst.com/local-favorites.html"
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/local-favorites/banner.png",
+      type: "image/png",
+      width: "1200",
+      height: "630",
+      alt: title
+    }
+
+block header
+  include ../includes/nav_header.pug
+
+block content
+  h1 This is content!
