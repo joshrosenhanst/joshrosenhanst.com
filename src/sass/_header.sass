@@ -97,6 +97,8 @@ nav#header-navbar
         box-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
 
         .dropdown-item
+          display: flex
+          align-items: center
           font-size: 22px
           //margin: 5px 0
           padding: 6px 2em 6px 0.5em
@@ -154,7 +156,7 @@ nav#header-navbar
           @extend %dropdown-open
       
 
-  a.navbar-item, a.dropdown-text
+  a.navbar-item, a.dropdown-text, a.dropdown-item
     color: $body-color
     &:hover, &:focus
       text-decoration: none
