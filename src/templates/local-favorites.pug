@@ -18,3 +18,29 @@ block header
 
 block content
   h1 This is content!
+  article.project
+
+    //- Intro
+    section#intro.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/local-favorites/local-favorites-main.png", alt="Local Favorites screenshot")
+      h1: span.header_text Local Favorites
+
+      //- Project links
+      .project-links
+        a.project-link.local-favorites-link(href="./local-favorites/")
+          +icon("local favorites", "button_icon")
+          span.button_text View Website
+        a.project-link.github-link(
+          href="https://github.com/joshrosenhanst/local-favorites"
+          target="_blank" 
+          rel="noopener noreferrer"
+        )
+          +icon("github", "button_icon")
+          span.button_text Source Code
+      
+      p <a href="./local-favorites/">Local Favorites</a> is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps JavaScript API.
+      p The app features an interactive map of your local area and a list of nearby points of interest (stores, restaurants, parks, etc).
+      p <strong>Technologies:</strong> Vue.js, Google Maps API, HTML5, CSS3
+
+
