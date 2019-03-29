@@ -1,6 +1,6 @@
 # joshrosenhanst.com
 
-[joshrosenhanst.com](https://joshrosenhanst.com) is made up of static HTML files, built using Pug.js.
+[joshrosenhanst.com](https://joshrosenhanst.com) is made up of static HTML files, built using Pug.js templates.
 
 ## Requirements
 - Pug.js - https://pugjs.org/api/getting-started.html
