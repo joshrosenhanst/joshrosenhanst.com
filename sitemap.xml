@@ -11,8 +11,13 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://joshrosenhanst.com/groupcalendar.html</loc>
+  <lastmod>2019-03-29T11:35:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://joshrosenhanst.com/local-favorites.html</loc>
-  <lastmod>2018-10-01T19:58:20+00:00</lastmod>
+  <lastmod>2019-03-29T11:35:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -22,7 +27,7 @@
 </url>
 <url>
   <loc>https://joshrosenhanst.com/my-watchlist.html</loc>
-  <lastmod>2018-10-01T19:58:20+00:00</lastmod>
+  <lastmod>2019-03-29T11:35:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -32,7 +37,7 @@
 </url>
 <url>
   <loc>https://joshrosenhanst.com/litbit.html</loc>
-  <lastmod>2018-10-01T19:58:20+00:00</lastmod>
+  <lastmod>2019-03-29T11:35:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -42,12 +47,12 @@
 </url>
 <url>
   <loc>https://joshrosenhanst.com/twitchrandom.html</loc>
-  <lastmod>2018-10-01T19:58:20+00:00</lastmod>
+  <lastmod>2019-03-29T11:35:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://joshrosenhanst.com/dota2layout.html</loc>
-  <lastmod>2018-10-01T19:58:20+00:00</lastmod>
+  <lastmod>2019-03-29T11:35:20+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
