@@ -1,0 +1,70 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "LitBit | Josh RosenHanst - Web Development and Design"
+  - var description = "The LitBit website generates small poems using random lines of text from classic literature."
+  - var url = "https://joshrosenhanst.com/litbit.html"
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/litbit/banner.png",
+      type: "image/png",
+      width: "1200",
+      height: "630",
+      alt: title
+    }
+
+block header
+  include ../includes/nav_header.pug
+
+block content
+  article.project
+  
+    //- Intro
+    section#intro.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/litbit/litbit-front.png", alt="LitBit screenshot")
+      h1: span.header-text LitBit
+
+      //- Project links
+      .project-links
+        a.project-link.litbit-link(href="./litbit/")
+          +icon("litbit", "button_icon")
+          span.button_text View Website
+        
+        a.project-link.github-link(
+          href="https://github.com/joshrosenhanst/litbit"
+          target="_blank" 
+          rel="noopener noreferrer"
+        )
+          +icon("github", "button_icon")
+          span.button_text Source Code
+
+      p The <a href="./litbit/">LitBit website</a> generates small poems using random lines of text from classic literature.
+
+      p Using public domain books from <a href="https://www.gutenberg.org/" target="_blank" rel="noopener noreferrer">Project Gutenberg</a>, LitBit looks for similarly sized lines of text and randomly selects 3 lines to print out as a poem.
+
+      p Although the text is entirely derivative, the poem is a new, unique creation and can have meaning entirely separate from the original source.
+
+      p <strong>Technologies:</strong> Flask, Python, HTML5, CSS3
+
+    //- Book Processing
+    section#book-processing.site-section
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/litbit/sample-poem1.gif", alt="LitBit sample poem screenshot")
+      h2: span.header-text Book Processing
+
+      p Each book used on the website is processed using a Python script which reads the plain text file line by line and groups them by the number of syllables.
+
+      p The number of syllables are estimated using the <a href="https://github.com/akkana/scripts/blob/master/countsyl" target="_blank" rel="noopener noreferrer">countsyl.py</a> script which uses a few simple rules to determine the number of syllables. The syllable count isn't perfectly accurate, but works as a way of comparing similarly sized lines. The lines are also sanitized to remove extra whitespaces and quotation or other marks that don't have a matching symbol (for example, when a quotation starts on one line and ends on another).
+
+      p The list of lines grouped by syllable count is saved in <code>.json</code> format and the <code>books.json</code> file is updated with each processed book's author, title, and image.
+
+    //- Poem Creation
+    section#poem-creation.site-section
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/litbit/sample-poem2.gif", alt="LitBit second sample poem screenshot")
+      h2: span.header-text Poem Creation
+
+      p When the user visits LitBit, the <a href="http://flask.pocoo.org/" target="_blank" rel="noopener noreferrer">Flask framework</a> handles the HTTP request and generates a poem. LitBit looks up the selected book's <code>.json</code> file and prints 3 random lines, along with the book's title and cover image.
+
+      p Using the <a href="https://hashids.org/python/" target="_blank" rel="noopener noreferrer">Hashids</a> library, the indices of each line are encoded into a single URL, which can uniquely identify this generated poem so that the poem can be shared.
