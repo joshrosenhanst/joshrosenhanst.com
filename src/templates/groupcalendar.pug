@@ -1,0 +1,182 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "GroupCalendar | Josh RosenHanst - Web Development and Design"
+  - var description = "GroupCalendar is a Laravel web app that helps you organize friends and colleagues into private groups so that you can plan upcoming events together."
+  - var url = "https://joshrosenhanst.com/groupcalendar.html"
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/groupcalendar/banner.png",
+      type: "image/png",
+      width: "1036",
+      height: "630",
+      alt: title
+    }
+
+block header
+  include ../includes/nav_header.pug
+
+block content
+  article.project
+  
+    //- Intro
+    section#intro.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/groupcalendar/banner.png", alt="GroupCalendar banner screenshot")
+      h1: span.header-text GroupCalendar
+
+      //- Project links
+      .project-links
+        a.project-link.groupcalendar-link(href="./groupcalendar/")
+          +icon("groupcalendar_bg", "button_icon")
+          span.button_text View Website
+        
+        a.project-link.github-link(
+          href="https://github.com/joshrosenhanst/Group-Calendar"
+          target="_blank" 
+          rel="noopener noreferrer"
+        )
+          +icon("github", "button_icon")
+          span.button_text Source Code
+
+      p <a href="./groupcalendar/">GroupCalendar</a> is a Laravel web app that helps you organize friends and colleagues into private groups so that you can plan upcoming events together. Users can join many groups and events created in groups are visible only to other group members.
+
+      p The GroupCalendar website is designed to make creating and collaborating on group events easy and intuitive.
+
+      p <strong>Technologies:</strong> Laravel, Vue.js, MySQL, HTML5, CSS3
+
+    //- Event Planning
+    section#event-planning.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/groupcalendar/event-form-datepicker.png", alt="GroupCalendar Event form screenshot with datepicker widget open")
+      h2: span.header-text Event Planning
+
+      //- Datepicker Calendar
+      h3#datepicker: span.header-text Datepicker Calendar
+
+      p The New and Edit Event forms feature a datepicker calendar tool so that users can visually pick their event dates. The calendar also shows any events from the organizer's other groups so that they can avoid scheduling conflicts.
+
+      //- Location Autocomplete
+      h3#location-autocomplete: span.header-text Location Autocomplete
+
+      p Another component of the Event forms is the <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete" target="_blank" rel="noopener noreferrer">Google Maps Autocomplete widget</a> which lets the organizer quickly set their location by typing a name or address and selecting their result from the autocomplete list. In addition, Google Maps provides a static map image for the <a href="#event-flyers">Event Flyer PDF</a> once the event is created.
+
+      //- Event Header Image
+      h3#event-header-image: span.header-text Event Header Image
+
+      p Organizers can customize the look of the event by selecting a header image from a collection of stock images. The header image is displayed prominently on the Event Details page and the Event Flyer PDF.
+
+      //- Event Flyers
+      h3#event-flyers: span.header-text Event Flyers
+
+      p Every event includes an automatically generated PDF flyer which users can download and share. The flyer lists all of the event details and prominently features the event's header image, as well as a map of the event's location.
+
+    //- Group Collaboration
+    section#group-collaboration.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/groupcalendar/event-comments-attendees.png", alt="Group Calendar Event Details page - Comment and Attendee sections screenshot", style="max-width: 450px;")
+      h2: span.header-text Group Collaboration
+
+      p Once the event is created, group members can collaborate by adding comments and setting their attendee status for the event. The organizer and group admins can update the event based on the group's feedback.
+
+      p The Edit Event form also includes a comment field so that the organizer can add an event comment upon submission and directly inform group members about their changes.
+
+      p In addition, GroupCalendar features a robust notification system so group members receive immediate feedback about new comments and event updates.
+
+    //- User Experience
+    section#user-experience.site-section
+      h2: span.header-text User Experience
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/groupcalendar/dashboard.png", alt="Group Calendar User Dashboard screenshot")
+        figcaption User Dashboard Page
+
+      p GroupCalendar is designed to be simple to navigate and quickly find details about group events. Every page features a prominent page title, breadcrumb trail, and contextual sidebar navigation.
+
+      //- User Dashboard
+      h3#user-dashboard: span.header-text User Dashboard
+
+      p When a user logs into GroupCalendar, they are shown their personal dashboard which lists the groups they belong to and a scrollable list of upcoming events in their groups.
+
+      //- My Events Page
+      h3#my-events: span.header-text My Events Page
+
+      p The My Events page aggregates all of the events in the user's groups into one event list, separated by month. The page displays relevant details of events including the name, date, location city and state, group name, and the user's current attendee status. The events listed are also separated into Upcoming and Past Events tabs.
+
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/groupcalendar/my-events.png", alt="Group Calendar My Events page screenshot showing all events in the user's groups")
+        figcaption My Events Page
+
+      //- Sidebar Navigation
+      h3#sidebar-navigation: span.header-text Sidebar Navigation
+      p The sidebar menus are displayed based on the context of the page. For example, the Event Details page features a sidebar menu with Edit and Delete Event links. These links are visible if the user is <a href="#page-authorization">authorized</a> to update the event. 
+      p Below the event navigation menu is a group menu with links relevant to the group that the event takes place in. Below that menu is the user navigation menu which includes links relevant to the user.
+
+      //- Demo Mode
+      h3#demo-mode: span.header-text Demo Mode
+      p GroupCalendar includes a <a href="./groupcalendar/demo" target="_blank" rel="noopener noreferrer">demo mode</a> to quickly try out the website's functionality. When you visit the demo page, you are automatically logged into a randomly generated test account.
+
+      p Demo accounts are members of preset demo groups and are able to create events, leave comments, and set their attendee status on events. Other functionality including creating and leaving groups is disabled for demo accounts.
+
+    //- Design
+    section#design.site-section
+      h2: span.header-text Design
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/groupcalendar/group-home-page.png", alt="Group Calendar Group Home page screenshot displaying the overall card based design of the website")
+        figcaption Group Home Page
+
+      p GroupCalendar uses a <a href="https://bulma.io/documentation/components/card/" target="_blank" rel="noopener noreferrer">card based design</a> built with <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer">Flexbox</a> to visually separate different sections. This layout is also designed to responsively resize based on the user's screen size without losing functionality. For example, the sidebar navigation menus collapse and become part of the header navigation on smaller screens.
+
+      p The website's color scheme includes shades of white and grey for most of the page content and turquoise for card headers, borders, and emphasis.
+
+      p Additionally, <a href="https://materialdesignicons.com/" target="_blank" rel="noopener noreferrer">SVG icons</a> are used to add extra flair to buttons, links, tabs, etc.
+      
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/groupcalendar/banner.png", alt="GroupCalendar landing page screenshot")
+        figcaption The GroupCalendar Landing Page
+
+      p The <a href="./groupcalendar/">landing page</a> is designed to be eye-catching and noticeable by making heavy use of the emphasis color in a <a href="https://bulma.io/documentation/layout/hero/" target="_blank" rel="noopener noreferrer">hero banner design</a>. The landing page is also meant to show off the features of GroupCalendar so it includes prominent screenshots of the app.
+
+    //- Technical Details
+    section#technical-details.site-section
+      h2: span.header-text Technical Details
+
+      h3#laravel-framework: span.header-text Laravel Framework
+
+      p GroupCalendar is built with the <a href="https://laravel.com/">Laravel Framework</a>. Laravel follows a model-view-controller pattern to divide the different aspects of the application into interconnected parts. Database tables are accessed and updated using <a href="https://laravel.com/docs/5.8/eloquent">Eloquent ORM</a>. Laravel also manages the routing and controller actions that occur when a page view is requested and rendered.
+
+      h3#page-authorization: span.header-text Page Authorization
+
+      p Many aspects of GroupCalendar are only available to a user if they are authorized to access them. For example, groups are private and only group members have authorization to view the group pages.
+
+      p Authorization in GroupCalendar is defined and managed using Laravel's <a href="https://laravel.com/docs/5.8/authorization" target="_blank" rel="noopener noreferrer">authorization policies and gates.</a> When a user tries to visit a page, their authorization for that page is automatically checked by <a href="https://laravel.com/docs/5.8/authorization#via-middleware" target="_blank" rel="noopener noreferrer">middleware on the page route</a>. Based on the user's privileges, they are either allowed to view the page or they are automatically redirected to a 403 Not Authorized status page.
+
+      p Additionally, the navigation links in the sidebar menus are displayed based on the user's privileges. When a group admin or event organizer visits the Details page for an event, they are authorized to edit or delete the event, so the Edit and Delete Event sidebar links are rendered. However, normal members are not authorized to make changes to the event, so the website doesn't render links they can't use.
+
+      h3#frontend: span.header-text Frontend Rendering
+      p GroupCalendar pages are built using a combination of <a href="https://laravel.com/docs/5.8/blade" target="_blank" rel="noopener noreferrer">Laravel Blade templates</a> and <a href="https://vuejs.org/v2/guide/components.html" target="_blank" rel="noopener noreferrer">Vue.js components</a>. Blade templates render the base layout of a page including any data retrieved from the database. Vue.js widgets are then used to enhance the page and add interactive elements.
+
+      p These Vue.js widgets are designed to gracefully fallback to normal HTML elements if JavaScript is unavailable. For example, the New and Edit Event forms feature <a href="#location-autocomplete">location autocomplete</a> and <a href="#datepicker">datepicker calendar widgets</a> which use Vue.js to handle custom user interaction. If JavaScript is unavailable, the location autocomplete will render as several text fields so the user can manually enter the location name, address, city and state.
+
+      p Another example is the image selection popup used for picking event header images and profile avatars. With JavaScript enabled, the user sees a modal popup with images displayed in a grid. If JavaScript is disabled, the page shows a scrolling list of the same images with radio buttons under each image so the user can still select an image.
+
+    //- Accessibility Considerations
+    section#accessibility.site-section
+      h2: span.header-text Accessibility Considerations
+
+      p The website aims to be fully accessible via keyboard. Interactive Vue.js components that normally function with mouse clicks also support <code>Enter</code> and <code>Space</code> key presses.
+
+      p For example, the <a href="#datepicker">calendar datepicker</a> widgets on the event forms can be navigated by clicking the previous/next month buttons or by using the arrow keys. The <code>Left</code> and <code>Right</code> arrow keys move the selected date by one day, while the <code>Up</code> and <code>Down</code> arrow keys will move the date by one week. When the user is ready to select their event date they can click the day in the calendar or use the <code>Enter</code> or <code>Space</code> keys.
+
+      p To compliment keyboard navigation throughout the website, elements on the page are styled with emphasis when focused so the user can visually see where they are when navigating with the <code>Tab</code> key.
+
+    //- Browser Support
+    section#browser-support.site-section
+      h2: span.header-text Browser Support
+
+      p Although GroupCalendar uses Vue.js JavaScript components, the <a href="#frontend">graceful fallback</a> when JavaScript is disabled allows the site to operate even on browsers <a href="https://github.com/vuejs/vue#browser-compatibility" target="_blank" rel="noopener noreferrer">Vue.js doesn't support</a>. However, the <a href="#design">design of GroupCalendar</a> makes heavy use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Browser_compatibility" target="_blank" rel="noopener noreferrer">Flexbox</a>, which limits the browser compatibility to Internet Explorer 10 and above.
+
+
+
+
+
+
