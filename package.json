@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass sass/index.sass css/index.css"
+    "css": "sass src/sass/index.sass dist/css/index.css",
+    "html": "pug src/templates --out dist",
+    "assets": "cp -R src/assets dist",
+    "build": "npm run html && npm run css && npm run assets"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,117 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "My Watchlist | Josh RosenHanst - Web Development and Design"
+  - var description = "My Watchlist is a React.js web app that can help you track a watchlist of movies and TV shows, as well as the movies and shows you've already seen."
+  - var url = "https://joshrosenhanst.com/my-watchlist.html"
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/my-watchlist/banner.png",
+      type: "image/png",
+      width: "1200",
+      height: "630",
+      alt: title
+    }
+
+block header
+  include ../includes/nav_header.pug
+
+block content
+  article.project
+  
+    //- Intro
+    section#intro.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/my-watchlist/my-watchlist-main.png", alt="My Watchlist screenshot")
+      h1: span.header-text My Watchlist
+
+      //- Project links
+      .project-links
+        a.project-link.my-watchlist-link(href="./watchlist/")
+          +icon("my watchlist", "button_icon")
+          span.button_text View Website
+        
+        a.project-link.github-link(
+          href="https://github.com/joshrosenhanst/my-watchlist"
+          target="_blank" 
+          rel="noopener noreferrer"
+        )
+          +icon("github", "button_icon")
+          span.button_text Source Code
+
+      p <a href="./watchlist/">My Watchlist</a> is a <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js</a> web app that can help you track a watchlist of movies and TV shows, as well as the movies and shows you've already seen.
+
+      p My Watchlist connects to the Open Movie Database (OMDb API) to find details on movies, shows, and more.
+
+      p <strong>Technologies:</strong> React.js, OMDb API, Bulma, HTML5, CSS3
+
+    //- Autocomplete Results
+    section#autocomplete.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/my-watchlist/watchlist-autocomplete.png", alt="My Watchlist autocomplete results screenshot")
+      h2: span.header-text Autocomplete Results
+
+      p My Watchlist uses an Autocomplete search input component (<a href="https://github.com/reactjs/react-autocomplete" target="_blank" rel="noopener noreferrer">react-autosuggest)</a> which is configured to connect to OMDb API and get results based on the search input.
+
+      p When the user type the name of a movie or show, they can select a result from the list and it is added to the Up Next watchlist. This watchlist shows the name, poster, and year of the result. From the Up Next watchlist they can mark the movie as Watched or remove the item from their list.
+
+      p The watchlist data is saved locally using the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage" target="_blank" rel="noopener noreferrer">LocalStorage</a> database, so the user can return to the website and see their saved list.
+
+    //- Design
+    section#design.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/my-watchlist/mobile-screenshot.png", alt="My Watchlist mobile design screenshot")
+      h2: span.header-text Design
+      p My Watchlist uses element and designs from the <a href="https://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma CSS framework</a>, as well as the <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">FontAwesome font icon library</a> for input and button fields.
+
+      p The elements in the app are positioned in the center of the layout and they will responsively grow and shrink to fit different screen sizes, so that the website can be properly displayed on a mobile browser as well as a desktop browser. The labels on the Watched and Return buttons will also be hidden when the screen size is very small so that only the button icons are shown.
+
+      figure.project-thumbnail.align-left.logo-thumbnail.my-watchlist-logo-thumbnail
+        +icon("my watchlist", "button_icon")
+
+      p The My Watchlist logo is designed to look like a film strip and the letter "L" (for list). The logo is a vector image made of simple lines and shapes. The image is displayed on the page using an <code>&lt;svg&gt;</code> tag so that it can cleanly scale and match the text color of the surrounding header text.
+
+      p The watchlist items use a combined poster and text overlay design to show the item's name, year, and type.
+
+    //- Project Components
+    section#project-components.site-section
+      h2: span.header-text Project Components
+
+      p Each section of the app is separated into a <a href="https://reactjs.org/docs/components-and-props.html" target="_blank" rel="noopener noreferrer">React Component</a>, which has its own logic, template, and associated stylesheet.
+
+      p The components are saved in <code>.jsx</code> files, which are compiled down to React objects using the  <a href="https://babeljs.io/" target="_blank" rel="noopener noreferrer">Babel compiler</a>.
+
+    //- Accessibility Considerations
+    section#accessibility.site-section
+      h2: span.header-text Accessibility Considerations
+
+      p The app supports both keyboard and mouse control. The autocomplete results can be navigated with the <code>Up</code> and <code>Down</code> keys. A result can be selected from the autocomplete list with the <code>Enter</code> key.
+
+      p Each of the items in the Up Next and Watched lists have a <code>tabindex</code> attribute set, so they can be accessed with the <code>Tab</code> key. Additionally, the items have the <code>aria-label</code> attribute set with a full description of the item (name, type, year). The watchlist item buttons can be accessed with the <code>Tab</code> key and activated with the <code>Enter</code> and <code>Space</code> keys as expected.
+
+      p The app's design uses the <code>outline</code> CSS property with high contrast colors (purple on a white background) when an item, button, or the search input is focused.
+
+    //- Progressive Web App
+    section#pwa.site-section
+      h2: span.header-text Progressive Web App
+
+      p The app was bootstrapped using the <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener noreferrer">Create React App tool</a> which provides the configuration necessary for the <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="noopener noreferrer">Progressive Web App</a> standard. By following the PWA standard, the website can be saved to a user's device home screen and act as a native app.
+
+      p The app uses a JavaScript Service Worker to facilitate caching the app resources, so the app will reloaded quickly and can be used offline. The app would still need to be online to connect to the OMDb API, but the saved watchlist could be viewed and updated.
+
+    section#browser-support.site-section
+      h2: span.header-text Browser Support
+
+      p My Watchlist supports modern browsers as well as Internet Explorer 10 and above. The React library <a href="https://reactjs.org/docs/react-dom.html#browser-support" target="_blank" rel="noopener noreferrer">can support IE 9 with additional polyfills</a>, but the Flexbox CSS of the the Bulma framework <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Browser_compatibility" target="_blank" rel="noopener noreferrer">require at least IE 10</a>.
+
+      p While testing the browser compatibility in Internet Explorer, an issue came up which didn't affect other browsers. The app would show a blank white screen and produce a console error <code>Access is Denied</code>, with little explanation. After doing some research into the error and finding many conflicting answers, I found <a href="https://dev.to/callmemagnus/a-journey-to-find-the-origin-of-a-broken-angular-app-4pai" target="_blank" rel="noopener noreferrer">an article by a developer that ran into a similar issue</a>.
+
+      p The developer explained the issue was with Internet Explorer's Protected Mode which is enabled by default on some installations. The Protected Mode can prevent access to the browser's LocalStorage database (which is used by the app to save the watchlist data locally) and will print the <code>Access is Denied</code> error.
+
+      p The IE protected mode that is only sometimes enabled is frustrating, but pointed to a bigger issue. This could happen in other browsers by disabling browser storage / cookies in the browser settings.
+
+      p This realization helped me to understand how to update the code to allow for users that might have their cookies disabled, which is not entirely uncommon. The app has been updated to display a notice to the user if LocalStorage is unavailable.
+
+      p This solution was also adapted for another project of mine that uses LocalStorage, <a href="./local-favorites.html">Local Favorites</a>.
+
+

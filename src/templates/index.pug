@@ -1,0 +1,217 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "Josh RosenHanst - Web Development and Design"
+  - var description = "Josh RosenHanst is a web developer and designer with more than 7 years of experience in front-end and back-end software development."
+  - var url = "https://joshrosenhanst.com/"
+  - var showResume = true
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/site-banner.png",
+      type: "image/png",
+      width: "1200",
+      height: "630",
+      alt: title
+    }
+
+block header
+  header#site-header
+    h1 Josh RosenHanst
+    h2 Web Development and Design
+
+    if showResume
+      .header-links
+        a.header-link(href="./assets/Joshua%20RosenHanst%20-%20Resume.pdf") Resume
+        a.header-link(href="mailto:contact@joshrosenhanst.com") Contact
+
+block content
+  section#about-me.site-section
+    h1: span.header-text About Me
+
+    p Hi there! I'm a web developer and designer with more than 7 years of experience in front-end and back-end software development.
+
+    p I'm interested in using web technologies to their fullest to create functional and well designed websites, which also conform to modern standards and best practices.
+
+    if showResume
+      .project-links.main-project-links
+        a.project-link(href="./assets/Joshua%20RosenHanst%20-%20Resume.pdf") View Resume
+        a.project-link(href="mailto:contact@joshrosenhanst.com") Contact Me
+
+  section#projects-intro.site-section
+    h1: span.header-text Development Projects
+
+    p These are personal projects I have created to learn new technologies and frameworks. Each project has an article detailing the project's development, including the technology, design, and other considerations.
+
+  //- GroupCalendar
+  article#groupcalendar.project
+    figure.project-thumbnail.align-right
+      a(href="./groupcalendar.html")
+        img(src="./assets/img/groupcalendar/banner.png", alt="GroupCalendar banner screenshot")
+
+    h2.with-logo
+      a.header-text(href="./groupcalendar.html") GroupCalendar
+      +icon("groupcalendar_bg", ["header-text-logo", "groupcalendar-logo"])
+
+    p GroupCalendar is a Laravel web app that helps you organize friends and colleagues into private groups so that you can plan upcoming events together.
+
+    p The GroupCalendar website is designed to make creating and collaborating on group events easy and intuitive.
+
+    p <strong>Technologies:</strong> Laravel, Vue.js, MySQL, HTML5, CSS3
+
+    p.read_more <a href="./groupcalendar.html">Read more about the development of GroupCalendar.</a>
+
+    .project-links
+      a.project-link.groupcalendar-link(href="./groupcalendar/")
+        +icon("groupcalendar_bg", "button_icon")
+        span.button_text View Website
+      a.project-link.github-link(
+        href="https://github.com/joshrosenhanst/Group-Calendar"
+        target="_blank" 
+        rel="noopener noreferrer"
+      )
+        +icon("github", "button_icon")
+        span.button_text Source Code
+
+  //- Local Favorites
+  article#local-favorites.project
+    figure.project-thumbnail.align-right
+      a(href="./local-favorites.html")
+        img(src="./assets/img/local-favorites/local-favorites-main.png", alt="Local Favorites screenshot")
+
+    h2.with-logo
+      a.header-text(href="./local-favorites.html") Local Favorites
+      +icon("local favorites", ["header-text-logo", "local-favorites-logo"])
+
+    p Local Favorites is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps JavaScript API.
+
+    p The app features an interactive map of your local area and a list of nearby points of interest (stores, restaurants, parks, etc).
+
+    p <strong>Technologies:</strong> Vue.js, Google Maps API, HTML5, CSS3
+
+    p.read_more <a href="./local-favorites.html">Read more about the development of Local Favorites.</a>
+
+    .project-links
+      a.project-link.local-favorites-link(href="./local-favorites/")
+        +icon("local favorites", "button_icon")
+        span.button_text View Website
+      a.project-link.github-link(
+        href="https://github.com/joshrosenhanst/local-favorites"
+        target="_blank" 
+        rel="noopener noreferrer"
+      )
+        +icon("github", "button_icon")
+        span.button_text Source Code
+
+  //- My Watchlist
+  article#my-watchlist.project
+    figure.project-thumbnail.align-right
+      a(href="./my-watchlist.html")
+        img(src="./assets/img/my-watchlist/my-watchlist-main.png", alt="My Watchlist screenshot")
+
+    h2.with-logo
+      a.header-text(href="./my-watchlist.html") My Watchlist
+      +icon("my watchlist", ["header-text-logo", "my-watchlist-logo"])
+
+    p My Watchlist is a React.js web app that can help you track a watchlist of movies and TV shows, as well as the movies and shows you've already seen.
+
+    p My Watchlist connects to the Open Movie Database to find details on movies, shows, and more.
+
+    p <strong>Technologies:</strong> React.js, OMDb API, Bulma, HTML5, CSS3
+
+    p.read_more <a href="./my-watchlist.html">Read more about the development of My Watchlist.</a>
+
+    .project-links
+      a.project-link.my-watchlist-link(href="./my-watchlist/")
+        +icon("my watchlist", "button_icon")
+        span.button_text View Website
+      a.project-link.github-link(
+        href="https://github.com/joshrosenhanst/my-watchlist"
+        target="_blank" 
+        rel="noopener noreferrer"
+      )
+        +icon("github", "button_icon")
+        span.button_text Source Code
+
+  //- LitBit
+  article#litbit.project
+    figure.project-thumbnail.align-right
+      a(href="./litbit.html")
+        img(src="./assets/img/litbit/litbit-front.png", alt="LitBit screenshot")
+
+    h2.with-logo
+      a.header-text(href="./litbit.html") LitBit
+      +icon("litbit", ["header-text-logo", "litbit-logo"])
+
+    p The LitBit website generates small poems using random lines of text from classic literature.
+
+    p LitBit also features an internal tool to easily import new books for the website to use.
+
+    p <strong>Technologies:</strong> Flask, Python, HTML5, CSS3
+
+    p.read_more <a href="./litbit.html">Read more about the development of LitBit.</a>
+
+    .project-links
+      a.project-link.litbit-link(href="./litbit/")
+        +icon("litbit", "button_icon")
+        span.button_text View Website
+      a.project-link.github-link(
+        href="https://github.com/joshrosenhanst/litbit"
+        target="_blank" 
+        rel="noopener noreferrer"
+      )
+        +icon("github", "button_icon")
+        span.button_text Source Code
+
+  //- TwitchRandom
+  article#twitchrandom.project
+    figure.project-thumbnail.align-right
+      a(href="./twitchrandom.html")
+        img(src="./assets/img/twitchrandom/twitchrandom-front.jpg", alt="TwitchRandom screenshot")
+
+    h2.with-logo
+      a.header-text(href="./twitchrandom.html") TwitchRandom
+      +icon("twitchrandom", ["header-text-logo", "twitchrandom-logo"])
+
+    p TwitchRandom is a project that finds random video game streams to watch, using the Twitch.tv API.
+
+    p Because the streams are completely random, you can find new games and broadcasters that aren't as well known.
+
+    p <strong>Technologies:</strong> Laravel, Twitch.tv API, jQuery, Bootstrap, HTML5, CSS3
+
+    p.read_more <a href="./twitchrandom.html">Read more about the development of TwitchRandom.</a>
+
+    .project-links
+      a.project-link.twitchrandom-link(href="https://twitchrandom.com")
+        +icon("twitchrandom", "button_icon")
+        span.button_text View Website
+      a.project-link.github-link(
+        href="https://github.com/joshrosenhanst/twitchrandom"
+        target="_blank" 
+        rel="noopener noreferrer"
+      )
+        +icon("github", "button_icon")
+        span.button_text Source Code
+
+  //- Dota 2 Layout
+  article#dota2layout.project
+    figure.project-thumbnail.align-right
+      a(href="./dota2layout.html")
+        img(src="./assets/img/dota2layout/dota2layout-front.jpg", alt="Dota 2 Layout screenshot")
+      figcaption The Dota 2 logo and other materials are the property of the Valve Corporation.
+
+    h2.with-logo
+      a.header-text(href="./dota2layout.html") Dota 2 Layout
+      +icon("dota2layout", ["header-text-logo", "dota2layout-logo"])
+
+    p Dota 2 Layout is an online editor for creating premade layouts in the character selection interface that was in the Dota 2 video game.
+
+    p Using the editor a player could create a custom layout and then import the layout into the Dota 2 game.
+
+    p <strong>Technologies:</strong> jQuery, PHP, WordPress, HTML5, CSS3
+
+    p.read_more <a href="./dota2layout.html">Read more about the development of Dota 2 Layout.</a>
+
+    .project-links
+      a.project-link.dota2layout-link(href="http://dota2layout.com")
+        +icon("dota2layout", "button_icon")
+        span.button_text View Website

@@ -37,10 +37,14 @@ main#site-main
       fill: $my-watchlist-purple
     &.twitchrandom-logo
       fill: $twitchrandom-purple
+      margin-left: 5px
     &.dota2layout-logo
       fill: $dota2layout-orange
+      padding: 5px
     &.groupcalendar-logo
       fill: $groupcalendar-red
+    &.litbit-logo
+      padding: 5px
 
   p
     line-height: 1.5rem
@@ -74,6 +78,8 @@ main#site-main
       font-style: italic
       padding-top: 5px
       text-align: center
+    a
+      display: block
     img, video
       display: block
       border-radius: 8px
@@ -115,7 +121,7 @@ main#site-main
     .project-link
       @extend %button
       font-weight: 500
-      margin-right: 5px
+      margin-right: 10px
       margin-bottom: 5px
       &:hover, &:focus, &:active
         text-decoration: none
@@ -124,10 +130,12 @@ main#site-main
         width: 1em
         fill: currentColor
         vertical-align: -2px
+        margin-right: 4px
       img.button_icon
         height: 1em
         width: 1em
         vertical-align: -2px
+        margin-right: 4px
       &.github-link
         background-color: $white
         color: $github-black

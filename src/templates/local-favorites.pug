@@ -1,0 +1,178 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "Local Favorites | Josh RosenHanst - Web Development and Design"
+  - var description = "Local Favorites is a Vue.js web app which lets you save and review your favorite local places, using the Google Maps JavaScript API."
+  - var url = "https://joshrosenhanst.com/local-favorites.html"
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/local-favorites/banner.png",
+      type: "image/png",
+      width: "1200",
+      height: "630",
+      alt: title
+    }
+
+block header
+  include ../includes/nav_header.pug
+
+block content
+  article.project
+
+    //- Intro
+    section#intro.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/local-favorites/local-favorites-main.png", alt="Local Favorites screenshot")
+      h1: span.header-text Local Favorites
+
+      //- Project links
+      .project-links
+        a.project-link.local-favorites-link(href="./local-favorites/")
+          +icon("local favorites", "button_icon")
+          span.button_text View Website
+        
+        a.project-link.github-link(
+          href="https://github.com/joshrosenhanst/local-favorites"
+          target="_blank" 
+          rel="noopener noreferrer"
+        )
+          +icon("github", "button_icon")
+          span.button_text Source Code
+      
+      p <a href="./local-favorites/">Local Favorites</a> is a Vue.js web app which lets you save and review your favorite local places using the Google Maps JavaScript API.
+      p The app features an interactive map of your local area and a list of nearby points of interest (stores, restaurants, parks, etc).
+      p <strong>Technologies:</strong> Vue.js, Google Maps API, HTML5, CSS3
+
+    //- My Favorites
+    section#my-favorites.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/local-favorites/favorites-sidebar-2.png", alt="My Favorites sidebar screenshot")
+      h2: span.header-text My Favorites
+
+      p When you select a place from the list or click its icon on the map, you can save it to your favorites and add a review with a star rating. The review will be displayed on the map and on the list. If you saved the location as a favorite it will be displayed in the My Favorites tab.
+      p When a user saves a favorite place or adds a review, their favorites are saved locally using the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage" target="_blank" rel="noopener noreferrer">LocalStorage</a> so that the data can persist when the user returns to the website.
+
+    //- Google Maps JavaScript API
+    section#maps-api.site-section
+      h2: span.header-text Google Maps JavaScript API
+
+      p Local Favorites integrates many different services from the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank" rel="noopener noreferrer">Google Maps JavaScript API</a> to provide a fuller experience. The <a href="https://github.com/xkjyeah/vue-google-maps" target="_blank" rel="noopener noreferrer">vue-google-maps</a> component provides default implementation of some of the API services and the app builds upon that implementation for the functionality of the website.
+
+      p When the app initializes it prompts the user's browser for their location using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer">Geolocation API</a> via <code>navigator.geolocation</code>. This location is provided to the <a href="https://developers.google.com/maps/documentation/javascript/reference/map" target="_blank" rel="noopener noreferrer">Maps Service</a> to update the bounds of the visible map. The user can also use the autocomplete search input, which is added as a map control, to search for a specific place or general area using the <a href="https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service" target="_blank" rel="noopener noreferrer">Places Autocomplete Service</a>.
+
+      p When the bounds of the map have changed, the system will request a new list of nearby places using the <a href="https://developers.google.com/maps/documentation/javascript/reference/places-service" target="_blank" rel="noopener noreferrer">Places Service</a>. These places are displayed in the results list on the Nearby tab. Additionally, the user can click a place icon on the map to select a location.
+
+    //- Project Components
+    section#project-components.site-section
+      h2: span.header-text Project Components
+
+      p The project is separated into multiple <a href="https://vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener noreferrer">single-file Vue.js components</a> which provide their own internal templates, logic, and styling. The component <code>.vue</code> files are compiled using <a href="https://cli.vuejs.org/guide/" target="_blank" rel="noopener noreferrer">Webpack</a>.
+
+      p The project also utilizes a centralized state management pattern which places app state data management into the <code>AppState.js</code> file, so that the common state data can be accessed by separate components. This pattern made the component interaction easier to maintain overall, but could be replaced with a more standardized implementation like <a href="https://vuex.vuejs.org/" target="_blank" rel="noopener noreferrer">Vuex</a> (see <a href="#future-updates">Future Updates</a> section).
+
+    //- Design
+    section#design.site-section
+      h2: span.header-text Design
+
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/local-favorites/full-screenshot-park.jpg", alt="Local Favorites design screenshot showing the general layout of the app")
+
+      p Local Favorites uses a <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer">Flexbox</a> based design that allows the main section (the map and the results list sidebar) to fill the page vertically and horizontally on larger screens. The sidebar uses a maximum width of 400px and the map can fill the rest of the available screen width. The contents of the sidebar scroll instead of flowing beyond the screen height.
+
+      figure.project-thumbnail.align-right(style="width: 350px;")
+        video#animation-video(
+          src="./assets/img/local-favorites/app-animations.mp4"
+          muted
+          controls
+          autoplay
+          loop
+          width="350"
+        )
+          p Your browser doesn't support the HTML5 video tag. <a href="./img/local-favorites/app-animations.mp4">Click here to view the video directly</a>.
+        figcaption Click the video to pause or resume.
+
+      p On smaller screens, the app uses a vertical design. The map has its maximum height to set to 250px and it fills the screen horizontally. The results list sidebar is then moved to below the map.
+
+      p Some components make use of the <a href="https://vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener noreferrer">Vue.js animation templates</a> to provide motion to certain controls, as seen in the example screen capture. For example, when a place is selected the button controls slide into the screen. Also, when the active tab is changed the tab's content slides in and the other tab slides out.
+
+      p The app uses some base styles from the <a href="https://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma CSS framework</a>, but only imports the style modules required. This reduces the overall project CSS file size. Additionally <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">SVG icons</a> are used to add extra flair to buttons, links, tabs, etc.
+
+    //- Accessibility Considerations
+    section#accessibility.site-section
+      h2: span.header-text Accessibility Considerations
+
+      p The website aims to be accessible by keyboard, as well as mouse. The results in the sidebar list have been added to the <code>tabindex</code> so that they can be focused when hitting the <code>Tab</code> key. The results can also be navigated using the <code>Up</code> and <code>Down</code> keys. Once focused, a result can be selected by pressing the <code>Enter</code> or <code>Space</code> keys. The user can then use the <code>Tab</code> key to reach the Save and Add Note control buttons.
+
+      p The app also uses the <code>outline</code> CSS property to add a highlighted look to controls when they are focused. The highlighted focus look improves visibility when using the keyboard to navigate, but doesn't look out of place when using the app with a mouse.
+
+      p One issue that arose while reviewing accessibility is that the map doesn't seem to be able to release keyboard focus in Firefox, even if you keep pressing the <code>Tab</code> key. To avoid this issue, the sidebar was placed ahead of the map in the HTML code. The Flexbox CSS was updated to reverse the flow of the design so that the sidebar will still appear after the map. Now in Firefox, the user can tab through the results list and its controls before hitting the map element and losing focus.
+
+    //- Progressive Web App
+    section#pwa.site-section
+      h2: span.header-text Progressive Web App
+
+      p The app was bootstrapped using the <a href="https://cli.vuejs.org/" target="_blank" rel="noopener noreferrer">Vue CLI tool</a> which provides the configuration necessary for the <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="noopener noreferrer">Progressive Web App</a> standard. By following the PWA standard, the website can be saved to a user's device home screen and act as a native app.
+
+      p The app uses a JavaScript Service Worker to facilitate caching the app resources, so the app will load quickly and can be used offline. The app would still need to be online to connect to the Google Maps API, but the saved My Favorites list and reviews could be viewed and updated.
+
+    //- Browser Support
+    section#browser-support.site-section
+      h2: span.header-text Browser Support
+      p Due to the use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Browser_compatibility" target="_blank" rel="noopener noreferrer">Flexbox</a> and the <a href="https://github.com/vuejs/vue#browser-compatibility" target="_blank" rel="noopener noreferrer">Vue.js framework</a>, browser support is limited to modern browsers, as well as Internet Explorer 10 and 11.
+
+      p Support for Internet Explorer 10 and 11 required the use additional polyfills included in the Webpack configuration. Polyfills are scripts that provide support for newer ECMAScript features in browsers that aren't compatible.
+
+    //- Future Updates
+    section#future-updates.site-section
+      h2: span.header-text Future Updates
+      ul
+        li
+          p.no-bottom-spacing <strong>Smoother Results List Updates</strong>
+
+          p When the map bounds are changed, the app requests a new list of results from the Google Maps API. When a result is selected, that result is centered on the map and an InfoWindow is displayed on the map. This may cause a positioning issue where the map automatically readjusts the map bounds to fit the InfoWindow, which could result in a new list being requested.
+
+          p This can result in a jumpy experience where the list is refreshed multiple times in a short amount of time. One possible fix would be to check that the bounds haven't changed past a certain distance before requesting a new list.
+
+        li
+          p.no-bottom-spacing <strong>Avoid Geolocation Request at Startup</strong>
+          p When the app is initialized, it requests the browser's geolocation, which requires a prompt asking for the user's permission. This experience could be improved by providing the map with a default location and adding a control to the map that requests the browser's geolocation on demand.
+
+        li
+          p.no-bottom-spacing <strong>Better Offline Support</strong>
+          p If the system detects the user is offline or otherwise unable to connect to Google Maps, it should hide or minimize the features that require API connection and instead show the My Favorites tab, which can be used offline.
+
+        li
+          p.no-bottom-spacing <strong>Replace App State Management Pattern with Vuex</strong>
+          p The centralized app state management pattern provided by the <code>AppState.js</code> file could be replaced with a more robust implementation like <a href="https://vuex.vuejs.org/" target="_blank" rel="noopener noreferrer">Vuex</a>.
+          p A library like Vuex could improve the way the central app state is managed in terms of efficiency and structure, but would require the introduction of more boilerplate code and concepts specific to the library.
+
+  script.
+    document.addEventListener('DOMContentLoaded', () => {
+      let videoplayer = document.getElementById("animation-video");
+      videoplayer.controls = false;
+      videoplayer.addEventListener("click", handleVideoClick, false);
+
+      async function playVideo() {
+        try {
+          await videoplayer.play();
+        } catch(err) {
+          console.log(err);
+        }
+      }
+
+      function handleVideoClick() {
+        if (videoplayer.paused) {
+          playVideo();
+        } else {
+          videoplayer.pause();
+        }
+      }
+    });
+
+
+    
+
+
+
+
+

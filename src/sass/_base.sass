@@ -1,4 +1,4 @@
-// Originally from Bulma CSS | MIT License | https://github.com/jgthms/bulma
+// Adapted from Bulma CSS | MIT License | https://github.com/jgthms/bulma
 html
   background-color: $body-background-color
   font-size: $body-size
@@ -114,5 +114,22 @@ table
     color: $text-strong
 
 ::selection
-  background-color: transparentize($link,0.5)
+  background-color: rgba($link,0.5)
   color: $white
+
+.content-skip
+  border: none !important
+  clip: rect(0, 0, 0, 0) !important
+  height: 0.01em !important
+  overflow: hidden !important
+  padding: 0 !important
+  position: absolute !important
+  white-space: nowrap !important
+  width: 0.01em !important
+  &:active,&:focus
+    position: static
+    width: auto
+    height: auto
+    overflow: visible
+    clip: auto
+    white-space: normal

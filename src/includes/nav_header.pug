@@ -1,0 +1,38 @@
+header#site-nav
+  nav#header-navbar
+    .navbar-section
+      a.navbar-item(href="https://joshrosenhanst.com" title="Return to the Home Page") Josh RosenHanst
+    .navbar-section
+      .navbar-item.dropdown
+        a.dropdown-text(tabindex="0") Projects
+        .dropdown-contents
+
+          a.dropdown-item(href="/groupcalendar.html")
+            span.navbar-icon.groupcalendar-icon
+              +icon("groupcalendar")
+            span GroupCalendar
+
+          a.dropdown-item(href="/local-favorites.html")
+            span.navbar-icon.local-favorites-icon
+              +icon("local favorites")
+            span Local Favorites
+
+          a.dropdown-item(href="/my-watchlist.html")
+            span.navbar-icon.my-watchlist-icon
+              +icon("my watchlist")
+            span My Watchlist
+
+          a.dropdown-item(href="/litbit.html")
+            span.navbar-icon.local-favorites-icon
+              +icon("litbit")
+            span LitBit
+
+          a.dropdown-item(href="/twitchrandom.html")
+            span.navbar-icon.twitchrandom-icon
+              +icon("twitchrandom")
+            span TwitchRandom
+
+          a.dropdown-item(href="/dota2layout.html")
+            span.navbar-icon.dota2layout-icon
+              +icon("dota2layout")
+            span Dota 2 Layout
