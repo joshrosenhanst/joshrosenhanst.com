@@ -1,0 +1,89 @@
+extends ../includes/wrapper.pug
+
+block variables
+  - var title = "Dota 2 Layout | Josh RosenHanst - Web Development and Design"
+  - var description = "Dota 2 Layout is an online editor for creating premade layouts in the character selection interface that was in the Dota 2 video game."
+  - var url = "https://joshrosenhanst.com/dota2layout.html"
+  - 
+    var banner = {
+      src: "https://joshrosenhanst.com/img/dota2layout/banner.png",
+      type: "image/png",
+      width: "1200",
+      height: "630",
+      alt: title
+    }
+
+block header
+  include ../includes/nav_header.pug
+
+block content
+  article.project
+  
+    //- Intro
+    section#intro.site-section
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/dota2layout/dota2layout-front.jpg", alt="Dota 2 Layout screenshot")
+        figcaption The Dota 2 logo and other materials are the property of Valve Corporation.
+      h1: span.header-text Dota 2 Layout
+
+      //- Project links
+      .project-links
+        a.project-link.dota2layout-link(href="http://dota2layout.com")
+          +icon("dota2layout", "button_icon")
+          span.button_text View Website
+      
+      p <a href="http://dota2layout.com">Dota 2 Layout</a> is an online editor for creating premade layouts for the character selection interface that was in the <a href="http://www.dota2.com/play/" target="_blank" rel="noopener noreferrer">Dota 2 video game</a>.
+
+      p Using the editor a player could create a custom layout and then import the layout into the Dota 2 game.
+
+      p <strong>Technologies:</strong> jQuery, PHP, WordPress, HTML5, CSS3
+
+    //- Custom Layouts
+    section#custom-layouts.site-section
+      h2: span.header-text Custom Layouts
+
+      p The Dota 2 video game has over 100 characters that can be selected during an online match. The game previously had an in-game interface tool where the player could organize the characters via drag-and-drop.
+
+      p By organizing the characters' icons, the player could emphasize and easily select the characters they liked and minimize other characters. The game's interface also had functionality to import and export custom layouts so that they could be shared with other players.
+
+      p One downside to the game's character selection interface was that you could only manage your layouts in the few minutes leading up to an online match.
+
+      p The Dota 2 Layout editor emulates this interface so that players can create and manage their layouts outside of the game and then easily import the layouts into the game. Although this functionality has since been removed from Dota 2, players can still create and share their layouts using Dota 2 Layout.
+
+    //- Layout Coordinates
+    section#layout-coordinates.site-section
+      h2: span.header-text Layout Coordinates
+
+      p The layout files that Dota 2 exported included the list of characters, denoted by their unique character ID, as well as each character's coordinates and scale in the game's layout. In order for the Dota 2 Layout website to use and export similar files, the custom game coordinates needed to be translated into values that could be used in CSS positioning.
+
+      p The game also supported 3 different aspect ratios which produced different coordinate values, so the site site was built to be able to switch between these aspect ratios.
+
+      p Once the user is finished working on their layout in the website editor they could export their custom layout and the site would build a <code>.txt</code> file with the coordinate values translated from CSS positioning values back into the game's original coordinate system. This layout file could then be imported into the game.
+
+    //- Editor Controls
+    section#editor-controls.site-section
+      h2: span.header-text Editor Controls
+      figure.project-thumbnail.align-right
+        img(src="./assets/img/dota2layout/grid-screenshot.jpg", alt="Dota 2 Layout screenshot showing the selected characters snapping to the grid")
+        figcaption Selected characters snapping to the editor grid
+
+      p The Dota 2 Layout editor supports drag-and-drop controls on each character's icon. The editor also supports selecting and dragging multiple icons at the same time. In addition to drag-and-drop, selected icons could be positioned using the arrow keys.
+
+      p When a character is selected their icon can be resized using the scroll wheel or the <code>Plus</code> and <code>Minus</code> keys.
+
+      p The editor also includes a Fine Controls section which gives precision controls over the selected character's position, scale, and z-index (which determines if the icon appears in the foreground or background).
+
+      p Another feature of the editor is the Grid system which offers snap-to-grid functionality while dragging an icon. The distance between grid lines is customizable by the user.
+
+    //- Public and Top 10 Galleries
+    section#public-gallery.site-section
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/dota2layout/gallery-screenshot.jpg", alt="Screenshot showing the public gallery page")
+      h2: span.header-text Public and Top 10 Galleries
+
+      p Users could submit their layouts to the <a href="http://dota2layout.com/gallery/" target="_blank" rel="noopener noreferrer">Gallery page</a> where other users could vote and comment on the layouts.
+
+      p Layouts in the public gallery could also be featured on the <a href="http://dota2layout.com/gallery/top10/" target="_blank" rel="noopener noreferrer">monthly Top 10 page</a>.
+
+      p To submit a layout to the Gallery, a user needed to register an account on the website. With a registered account, users can also save layouts to their account.
+
