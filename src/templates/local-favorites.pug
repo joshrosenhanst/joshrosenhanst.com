@@ -22,7 +22,7 @@ block content
     //- Intro
     section#intro.site-section
       figure.project-thumbnail.align-right
-        img(src="./assets/img/local-favorites/local-favorites-main.png", alt="Local Favorites screenshot")
+        img(src="./assets/img/local-favorites/local-favorites-main.png", alt="Local Favorites app screenshot - Header with logo and slogan, Body with Google Map showing selected result pin (United Nations Headquarters) and Sidebar with list of map results")
       h1: span.header-text Local Favorites
 
       //- Project links
@@ -46,7 +46,7 @@ block content
     //- My Favorites
     section#my-favorites.site-section
       figure.project-thumbnail.align-right
-        img(src="./assets/img/local-favorites/favorites-sidebar-2.png", alt="My Favorites sidebar screenshot")
+        img(src="./assets/img/local-favorites/favorites-sidebar-2.png", alt="Cropped screenshot showing the results sidebar with the My Favorites tab selected, which shows a list of locations with star ratings and user notes")
       h2: span.header-text My Favorites
 
       p When you select a place from the list or click its icon on the map, you can save it to your favorites and add a review with a star rating. The review will be displayed on the map and on the list. If you saved the location as a favorite it will be displayed in the My Favorites tab.
@@ -75,7 +75,7 @@ block content
       h2: span.header-text Design
 
       figure.project-thumbnail.align-center
-        img(src="./assets/img/local-favorites/full-screenshot-park.jpg", alt="Local Favorites design screenshot showing the general layout of the app")
+        img(src="./assets/img/local-favorites/full-screenshot-park.jpg", alt="Local Favorites design screenshot showing the layout of the app including header logo and slogan, Google Map with selected result pin (Holmdel Park) and Sidebar results list")
 
       p Local Favorites uses a <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer">Flexbox</a> based design that allows the main section (the map and the results list sidebar) to fill the page vertically and horizontally on larger screens. The sidebar uses a maximum width of 400px and the map can fill the rest of the available screen width. The contents of the sidebar scroll instead of flowing beyond the screen height.
 
@@ -87,8 +87,12 @@ block content
           autoplay
           loop
           width="350"
+          aria-label="Click the video to pause or resume"
+          aria-describedby="video_description"
         )
-          p Your browser doesn't support the HTML5 video tag. <a href="./img/local-favorites/app-animations.mp4">Click here to view the video directly</a>.
+          p#video_description The video is a cropped screen capture showing the animations of the sidebar results list and tabs. The video shows a user clicking different results in the list and switching between the Nearby and My Favorites tab.
+
+          p If your browser doesn't support HTML5 video you can download the video file: <a href="./img/local-favorites/app-animations.mp4">Click here to download the video</a>.
         figcaption Click the video to pause or resume.
 
       p On smaller screens, the app uses a vertical design. The map has its maximum height to set to 250px and it fills the screen horizontally. The results list sidebar is then moved to below the map.

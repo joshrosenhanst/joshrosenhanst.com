@@ -22,7 +22,7 @@ block content
     //- Intro
     section#intro.site-section
       figure.project-thumbnail.align-right
-        img(src="./assets/img/litbit/litbit-front.png", alt="LitBit screenshot")
+        img(src="./assets/img/litbit/litbit-front.png", alt="LitBit website screenshot - Shows the header logo and slogan, as well as a cropped list of available book titles and authors")
       h1: span.header-text LitBit
 
       //- Project links
@@ -50,7 +50,14 @@ block content
     //- Book Processing
     section#book-processing.site-section
       figure.project-thumbnail.align-center
-        img(src="./assets/img/litbit/sample-poem1.gif", alt="LitBit sample poem screenshot")
+        img(src="./assets/img/litbit/sample-poem1.gif", alt="LitBit sample poem screenshot. The poem is generated from Alice's Adventures in Wonderland and the image shows the book's title and poster, followed by the generated poem, and a permalink to the poem.", aria-describedby="alice_poem_transcription")
+
+        #alice_poem_transcription.sr-only
+          p LitBit Poem Screenshot Transcription:
+          p "Every Line:"
+          p "Bore it as well as she could."
+          p "Change the subject."
+
       h2: span.header-text Book Processing
 
       p Each book used on the website is processed using a Python script which reads the plain text file line by line and groups them by the number of syllables.
@@ -62,7 +69,14 @@ block content
     //- Poem Creation
     section#poem-creation.site-section
       figure.project-thumbnail.align-center
-        img(src="./assets/img/litbit/sample-poem2.gif", alt="LitBit second sample poem screenshot")
+        img(src="./assets/img/litbit/sample-poem2.gif", alt="LitBit second sample poem screenshot. This poem is generated from A Tole of Two Cities and the image shows the book's title and poster, followed by the poem, and a permalink to the poem.", aria-describedby="two_cities_poem_transcription")
+
+        #two_cities_poem_transcription.sr-only
+          p LitBit Poem Screenshot Transcription:
+          p "Human Sympathy."
+          p "Evidently understood it."
+          p "And the letter E."
+          
       h2: span.header-text Poem Creation
 
       p When the user visits LitBit, the <a href="http://flask.pocoo.org/" target="_blank" rel="noopener noreferrer">Flask framework</a> handles the HTTP request and generates a poem. LitBit looks up the selected book's <code>.json</code> file and prints 3 random lines, along with the book's title and cover image.
