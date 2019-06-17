@@ -202,6 +202,32 @@ $button-hover-border-color: $text-strong
     color: $button-hover-color
     background-color: $button-hover-background-color
 
+=header-button
+  display: inline-block
+  -moz-appearance: none
+  -webkit-appearance: none
+  +unselectable
+  margin: 10px 5px
+  background-color: $grey-lightest
+  color: $button-color
+  border-radius: $button-radius
+  border: 1px solid $button-border-color
+  padding: $button-padding
+  cursor: pointer
+  text-align: center
+  white-space: nowrap
+  line-height: 1.5
+  font-family: $header-family
+  font-size: 1.2rem
+  min-width: 110px
+  text-decoration: none
+  &:hover,&:focus
+    color: $white
+    background-color: $link
+  &:active
+    background-color: lighten($link, 10%)
+    color: $white
+
 =main-button
   color: $link
   border: 1px solid transparentize($link,0.8)

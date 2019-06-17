@@ -1,6 +1,6 @@
 =header-background
   background-color: $header-background-color
-  background-image: linear-gradient(135deg,$body-background-color,$header-background-color,$header-background-color,$body-background-color)
+  background-image: linear-gradient(135deg, $body-background-color, 35%,$header-background-color, 70%, $body-background-color)
   border-bottom: 2px solid transparentize($link,0.8)
 
 =dropdown-open
@@ -164,15 +164,4 @@ nav#header-navbar
 
 .header-links
   .header-link
-    +button
-    margin: 10px 5px
-    font-size: 1.1rem
-    font-family: $header-family
-    font-weight: 500
-    border-color: $grey-light
-    background-color: $grey-lightest
-    min-width: 110px
-    &:hover, &:focus
-      text-decoration: none
-      border-color: $body-color
-      background-color: $white
+    +header-button
