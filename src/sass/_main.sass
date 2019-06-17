@@ -1,5 +1,5 @@
 main#site-main
-  @extend %container
+  +container
   padding: 0 1.5rem
   h1
     font-size: 36px
@@ -119,7 +119,7 @@ main#site-main
   .project-links
     padding: 10px 0
     .project-link
-      @extend %button
+      +button
       font-weight: 500
       margin-right: 10px
       margin-bottom: 5px
@@ -145,6 +145,9 @@ main#site-main
           color: $white
         &:active
           background-color: lighten($github-black, 10%)
+      &.article-link
+        +main-button
+        border-color: $link
       &.local-favorites-link
         +logo-link($local-favorites-blue)
       &.my-watchlist-link
@@ -163,16 +166,8 @@ main#site-main
           width: 24px
           margin-bottom: -2px
 
-    
     &.main-project-links
       .project-link
         font-family: $header-family
-        color: $link
-        border: 1px solid transparentize($link,0.8)
         font-size: 1.2rem
-        &:hover, &:focus
-          color: $white
-          background-color: $link
-        &:active
-          background-color: lighten($link, 10%)
-          color: $white
+        +main-button

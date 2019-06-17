@@ -152,15 +152,14 @@ $button-hover-border-color: $text-strong
   &:active
     background-color: $hover
 
-// SASS Shared properties (shared via @extend %name)
-%unselectable
+=unselectable
   -webkit-touch-callout: none
   -webkit-user-select: none
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
 
-%container
+=container
   display: block
   margin: 0 auto
   +desktop
@@ -181,11 +180,11 @@ $button-hover-border-color: $text-strong
     max-width: $fullhd - (2 * $gap)
     width: $fullhd - (2 * $gap)
 
-%button
+=button
   display: inline-block
   -moz-appearance: none
   -webkit-appearance: none
-  @extend %unselectable
+  +unselectable
   background-color: $button-background-color
   color: $button-color
   border-radius: $button-radius
@@ -202,3 +201,13 @@ $button-hover-border-color: $text-strong
     border-color: $button-hover-border-color
     color: $button-hover-color
     background-color: $button-hover-background-color
+
+=main-button
+  color: $link
+  border: 1px solid transparentize($link,0.8)
+  &:hover, &:focus
+    color: $white
+    background-color: $link
+  &:active
+    background-color: lighten($link, 10%)
+    color: $white
