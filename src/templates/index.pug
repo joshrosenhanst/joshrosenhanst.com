@@ -4,7 +4,7 @@ block variables
   - var title = "Josh RosenHanst - Web Development and Design"
   - var description = "Josh RosenHanst is a web developer and designer with more than 7 years of experience in front-end and back-end software development."
   - var url = "https://joshrosenhanst.com/"
-  - var showResume = true
+  - var showResume = false
   - 
     var banner = {
       src: "https://joshrosenhanst.com/assets/img/site-banner.png",
@@ -19,10 +19,10 @@ block header
     h1 Josh RosenHanst
     h2 Web Development and Design
 
-    if showResume
-      .header-links
+    .header-links
+      if showResume
         a.header-link(href="./assets/Joshua%20RosenHanst%20-%20Resume.pdf") Resume
-        a.header-link(href="mailto:contact@joshrosenhanst.com") Contact
+      a.header-link(href="mailto:contact@joshrosenhanst.com") Contact
 
 block content
   section#about-me.site-section
