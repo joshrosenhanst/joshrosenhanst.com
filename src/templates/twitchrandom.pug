@@ -6,8 +6,8 @@ block variables
   - var url = "https://joshrosenhanst.com/twitchrandom.html"
   - 
     var banner = {
-      src: "https://joshrosenhanst.com/assets/img/twitchrandom/banner.png",
-      type: "image/png",
+      src: "https://joshrosenhanst.com/assets/img/twitchrandom/v2/twitchrandom-banner.jpg",
+      type: "image/jpeg",
       width: "1200",
       height: "630",
       alt: title
@@ -22,7 +22,7 @@ block content
     //- Intro
     section#intro.site-section
       figure.project-thumbnail.align-right
-        img(src="./assets/img/twitchrandom/twitchrandom-main.jpg", alt="TwitchRandom website screenshot - Cropped image shows the website's header menu, main banner with Twitch stream video and details, and Featured Streams section with thumbnails and a square ad")
+        img(src="./assets/img/twitchrandom/v2/twitchrandom-v2-front.jpg", alt="TwitchRandom website screenshot - Cropped image shows the website's header menu, main banner with Twitch stream and chat, and Featured Gallery section with thumbnails")
       h1: span.header-text TwitchRandom
 
       //- Project links
@@ -39,72 +39,74 @@ block content
           +icon("github", "button_icon")
           span.button_text Source Code
 
-      p <a href="https://twitchrandom.com">TwitchRandom</a> is a project that finds random <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer">video game streams</a> to watch, using the <a href="https://dev.twitch.tv/docs/v5/" target="_blank" rel="noopener noreferrer"> Twitch.tv API</a>.
+      p <a href="https://twitchrandom.com">TwitchRandom</a> is a project that finds random <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer">Twitch.tv video game streams</a> to watch, using the <a href="https://dev.twitch.tv/docs/v5/" target="_blank" rel="noopener noreferrer"> Twitch API</a>.
 
       p Because the streams are completely random, you can find new games and broadcasters that aren't as well known.
 
-      p The site can also filter the random streams by game.
+      p Originally built on the <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">Laravel PHP framework</a>, TwitchRandom has been redeveloped using the <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js JavaScript front-end framework</a>.
 
-      p <strong>Technologies:</strong> Laravel, Twitch.tv API, jQuery, Bootstrap, PHP, HTML5, CSS3
+      p <strong>v2 Technologies:</strong> React.js, Twitch.tv API, Bulma, HTML5, CSS3
+
+      p <strong>v1 Technologies:</strong> Laravel, Twitch.tv API, jQuery, Bootstrap, PHP, HTML5, CSS3
 
     //- Twitch.tv API
     section#twitch-api.site-section
       h2: span.header-text Twitch.tv API
 
-      p TwitchRandom is built on the <a href="https://laravel.com/" target="_blank" rel="noopener noreferrer">Laravel PHP framework</a> and uses the <a href="https://github.com/jofner/Twitch-SDK" target="_blank" rel="noopener noreferrer">TwitchTV SDK for PHP</a> tool to connect to the Twitch.tv API.
+      p TwitchRandom connects to the <a href="https://dev.twitch.tv/docs/v5" target="_blank" rel="noopener noreferrer">Twitch API</a> to fetch random streams and the list of games.
 
-      p The website requests a random stream using the <a href="https://dev.twitch.tv/docs/v5/reference/streams/#get-live-streams" target="_blank" rel="noopener noreferrer">Get Live Streams API endpoint</a> with a randomized offset value. The Twitch API will return a <code>JSON</code> response with the details of the stream located at the random offset. TwitchRandom also uses this API endpoint to find randomized streams filtered by game.
+      p The website requests a random stream using the <a href="https://dev.twitch.tv/docs/v5/reference/streams#get-live-streams" target="_blank" rel="noopener noreferrer">Get Live Streams API endpoint</a> with a randomized offset value. The API will return a <code>JSON</code> response with the details of the stream located at the random offset. TwitchRandom also uses this API endpoint to find randomized streams filtered by game.
 
-      p With the <code>JSON</code> response, the site can embed the Twitch channel's live stream video into the layout of the website.
+      p With the <code>JSON</code> response, the site can embed the Twitch channel's live stream video and chat into the layout of the website.
 
-      p In addition to the random stream functionality, the site also grabs a list of the most popular games using the <a href="https://dev.twitch.tv/docs/v5/reference/games/#get-top-games" target="_blank" rel="noopener noreferrer">Get Top Games API endpoint</a>. The top games are used to populate the list of games in the header navigation menu as well as the <a href="https://twitchrandom.com/games" target="_blank" rel="noopener noreferrer">All Games page</a>.
+      p In addition to the random stream functionality, the site also grabs a <a href="https://twitchrandom.com/games/">searchable list of the games with live streams</a> on Twitch.tv using the <a href="https://dev.twitch.tv/docs/v5/reference/games/#get-top-games" target="_blank" rel="noopener noreferrer">Get Top Games API endpoint</a>.
 
     //- Featured Content
     section#featured-content.site-section
-      figure.project-thumbnail.align-center
-        img(src="./assets/img/twitchrandom/featured-streams.jpg", alt="Featured Streams screenshot showing thumbnail images of the 3 Twitch.tv featured streams and a square ad")
       h2: span.header-text Featured Content
+      figure.project-thumbnail.align-center
+        img(src="./assets/img/twitchrandom/v2/featured-streams.jpg", alt="Featured Streams screenshot showing thumbnail images of the 4 Twitch.tv featured streams")
       
-      p Although it can be interesting to find hidden gems using the random stream functionality, users can also find the top featured Twitch streams in the Featured Streams section. This section is visually emphasized and also ends with a responsive Google Adsense ad that fits comfortably into the layout.
+      p Although it can be interesting to find hidden gems using the random stream functionality, users can also find the top featured Twitch streams in the Featured Streams section.
 
     //- Slogans
     section#slogans.site-section
       h2: span.header-text Slogans
-      p In the header of the website, the site displays a random slogan when the page is loaded. These slogans are taken from popular Twitch and video game culture.
+      p In the header of the website, the site displays a random slogan when the page is loaded. These slogans are taken from popular Twitch and video game culture. Github community members can also <a href="https://github.com/joshrosenhanst/twitchrandom/issues/1" target="_blank" rel="noopener noreferrer">contribute to the list of slogans</a>.
 
     //- Thumbnail Galleries
     section#thumbnail-galleries.site-section
       h2: span.header-text Thumbnail Galleries
 
       figure.project-thumbnail.align-center
-        img(src="./assets/img/twitchrandom/galleries-screenshot.jpg", alt="Thubmnail Gallery screenshot showing 3 random Twitch.tv stream thumbnails and a Randomize Gallery button")
+        img(src="./assets/img/twitchrandom/v2/galleries.jpg", alt="Thubmnail Gallery screenshot showing 8 random Twitch.tv stream thumbnails and a Randomize Gallery button")
 
-      p Below the Featured Streams section, the site loads two scrollable galleries with thumbnail links to other streams
-
-      p The first gallery includes randomly selected channels and the second gallery includes channels that are playing the same game as the embedded stream at the top of the page. The galleries can be loaded with new random stream links by pressing the Randomize Gallery buttons.
+      p Below the Featured Streams section, the site shows a gallery of thumbnails from 8 random streams. If the user is looking at a specific game from the <a href="https://twitchrandom.com/games/">Browse Games page</a>, the Random Streams gallery will fetch other streams from that game.
 
     //- Design
     section#design.site-section
       figure.project-thumbnail.align-right
-        img(src="./assets/img/twitchrandom/mobile-screenshot.jpg", alt="TwitchRandom mobile responsive design screenshot showing how the website looks in a mobile browser. The header menu shows a logo, slogan, and a collapsed menu button. The main stream video and details are displayed vertically.")
+        img(src="./assets/img/twitchrandom/v2/mobile.jpg", alt="TwitchRandom mobile responsive design screenshot showing how the website looks in a mobile browser, including the header navigation, followed by the embedded stream video and chat.")
       h2: span.header-text Design
 
-      p TwitchRandom uses a responsive design built with the <a href="http://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap CSS framework</a>. The site's layout is designed to look clean on both mobile and desktop browsers. The site uses a color scheme of purple and white similar to Twitch.tv.
+      p The TwitchRandom design uses responsive web design principles to render cleanly on mobile and desktop browsers, built with the <a href="https://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma CSS framework</a>. The site includes a color scheme of purple and white similar to the Twitch.tv color scheme.
 
-    //- AJAX Usage
+      p The site was also redesigned in version 2 to increase the size of the embedded viewer, add an embedded chat window, and simplify the overall look of the mobile website.
+
+    //- React.js
     section#ajax.site-section
-      h2: span.header-text AJAX Usage
-      p In order to keep the user interface feeling fluid and responsive, many sections of the site make use of asynchronous AJAX calls which do not require reloading the entire page.
-
-      p For example, the Random Stream button next to the embedded video will replace the current stream with a new, random stream. When the button is pressed, a new stream is requested via AJAX and a new random slogan is placed in the website branding.
-
-      p Additionally, the site's URL is updated to the new stream's unique URL. Finally, using the <a href="https://github.com/browserstate/history.js/" target="_blank" rel="noopener noreferrer">History.js</a> library, the site creates a new entry in the browser's history record, emulating the act of changing pages. These two actions make it so that the random streams are accessible later if the user hits the back button or enters the stream URL.
+      h2: span.header-text React.js
+      p In version 2, TwitchRandom was rebuilt completely using the <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js JavaScript front-end framework</a>. The original version of the website was built with a Laravel backend that used the now unmaintained <a href="https://github.com/jofner/Twitch-SDK" target="_blank" rel="noopener noreferrer">TwitchTV SDK for PHP project</a> to connect to the Twitch API.
       
-      p The galleries are also requested via AJAX and can be reloaded with the Randomize Gallery buttons.
+      p The previous site would initially load with a single stream and then use AJAX to asynchronously fetch galleries and any additional streams. Switching pages between the random stream, game specific stream, and list of games pages would require additional page loads. 
+      
+      p In version 2, the site is divided into React components that can be asynchronously loaded, updated, and rendered into a Single Page Application. Each component manages its own internal state and fetches the API endpoints required to display content. The site uses <a href="https://reactrouter.com/" target="_blank" rel="noopener noreferrer">React Router</a> to render different page views on the frontend, so the user only has to wait for the initial page load.
+
+      p The static HTML file that the React app is rendered onto is kept as minimal as possible to make the initial page load very quick. The HTML file includes a simple wrapper template and critical inline CSS styles for that wrapper. The React components include their own styles internally.
 
     //- Browser Support
     section#browser-support.site-section
       h2: span.header-text Browser Support
 
-      p The website uses jQuery for much of its front-end functionality and is compatible with all modern browsers as well as older Internet Explorer versions. Unfortunately, the Twitch.tv embedded player only <a href="https://help.twitch.tv/customer/portal/articles/2489984-supported-browser-versions" target="_blank" rel="noopener noreferrer">supports Internet Explorer 11</a>.
+      p TwitchRandom is built on <a href="https://reactjs.org/docs/react-dom.html#browser-support" target="_blank" rel="noopener noreferrer">React.js</a> which can support all modern browsers and older Internet Explorer versions. Unfortunately, the Twitch.tv embedded player only supports Internet Explorer 11 and above.
 
