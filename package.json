@@ -1,6 +1,6 @@
 {
   "name": "joshrosenhanst.com",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Personal site: [joshrosenhanst.com](https://joshrosenhanst.com)",
   "scripts": {
     "css": "sass src/sass/index.sass dist/css/index.css",
